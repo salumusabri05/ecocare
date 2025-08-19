@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { Facebook, Twitter, Instagram, Youtube, Linkedin, Leaf, ArrowUp, Heart, Mail, Phone, MapPin } from 'lucide-react';
 

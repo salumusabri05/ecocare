@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ArrowRight, Menu, X, Leaf, Users, Target } from 'lucide-react';
 
@@ -51,7 +53,7 @@ const HeaderHero = () => {
                   isScrolled ? 'text-gray-800' : 'text-white'
                 }`}>
                   EcoCare
-                </h1>
+                </h1> 
                 <p className={`text-sm transition-colors ${
                   isScrolled ? 'text-blue-600' : 'text-blue-200'
                 }`}>

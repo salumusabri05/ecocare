@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Users, Heart, Sprout, BookOpen, Stethoscope, Wheat } from 'lucide-react';
 
