@@ -12,12 +12,12 @@ export default function Home() {
       {/* Main Content */}
       <main>
         {/* Our Approach Section */}
-        <section className="py-16 md:py-24">
+        <section>
           <OurApproach />
         </section>
 
         {/* Latest News Section */}
-        <section className="py-16 md:py-24">
+        <section>
           <LatestNews />
         </section>
       </main>
