@@ -229,7 +229,7 @@ const Footer = () => {
               <span className="text-red-500">|</span>
               <a href="#" className="hover:text-white transition-colors flex items-center space-x-2">
                 <span>Built by</span>
-                <span className="text-yellow-400 hover:text-yellow-300 font-medium">Tanzlite Digital</span>
+                <span className="text-yellow-400 hover:text-yellow-300 font-medium">EcoCare Alliance Foundation</span>
               </a>
             </div>
           </div>
