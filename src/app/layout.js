@@ -1,11 +1,13 @@
-import { Nunito } from "next/font/google";
+import { Andika } from "next/font/google";
 import "./globals.css";
 
 
-const nunito = Nunito({
-  subsets: ["latin"],
-  variable: "--font-nunito",
+const andika = Andika({
+  subsets: ["latin", "latin-ext", "cyrillic", "cyrillic-ext", "vietnamese"],
+  variable: "--font-andika",
   display: "swap",
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata = {
@@ -17,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${nunito.variable} antialiased`}
+        className={`${andika.variable} antialiased`}
       >
         {children}
       </body>
