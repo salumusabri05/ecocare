@@ -111,8 +111,7 @@ const OurApproach = () => {
             </h2>
             
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed mt-8">
-              We convene and partner with diverse stakeholders to champion bold ideas, empower communities, and inspire 
-              sustainable solutions—driven by research, innovation, and collaboration in health, skills and agriculture.
+              At EcoCare Alliance Foundation, we believe real change begins with people and the environment working in harmony. Our programs are designed to address both urgent health needs and long-term sustainability challenges. By combining innovation, research, and community participation, we create initiatives that not only solve today’s problems but also build resilience for the future. Through partnerships and collaboration, we empower individuals to take ownership of their health, environment, and livelihoods.
             </p>
           </div>
         </div>
