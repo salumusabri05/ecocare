@@ -28,9 +28,9 @@ const Hero = () => {
         <img 
           src="/hero.jpg" // Replace with your actual hero image path
           alt="Community member with child"
-          className="w-full h-full object-cover opacity-80"
+          className="w-full h-full object-cover object-center sm:object-right opacity-80"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-800/80 via-blue-700/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-800/90 via-blue-700/70 to-blue-600/50"></div>
       </div>
 
       {/* Hero Content */}
@@ -38,8 +38,8 @@ const Hero = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             {/* Main Heading */}
-            <div className="space-y-4 mb-8">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-white">
+            <div className="space-y-2 sm:space-y-4 mb-6 sm:mb-8">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-white">
                 <span className="block animate-fadeInUp">CATALYSING</span>
                 <span className="block text-yellow-400 animate-fadeInUp" style={{ animationDelay: '200ms' }}>
                   CHANGE
@@ -47,7 +47,7 @@ const Hero = () => {
               </h1>
               
               {/* Animated subtitle */}
-              <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
                 <span className="block text-yellow-400 min-h-[1.2em]">
                   {animatedText}
                   <span className="animate-pulse">|</span>
@@ -56,16 +56,16 @@ const Hero = () => {
             </div>
             
             {/* Description */}
-            <p className="text-lg sm:text-xl lg:text-2xl text-white/90 max-w-3xl leading-relaxed mb-8 animate-fadeInUp" style={{ animationDelay: '800ms' }}>
+            <p className="text-base sm:text-lg lg:text-xl text-white/90 max-w-2xl lg:max-w-3xl leading-relaxed mb-6 sm:mb-8 animate-fadeInUp" style={{ animationDelay: '800ms' }}>
               We work with communities, partners, and stakeholders to improve health, protect the environment, 
               and create sustainable solutions—leveraging innovation, ICT, and AI to enhance the quality of life across Tanzania and beyond.
             </p>
 
             {/* CTA Button */}
             <div className="animate-fadeInUp" style={{ animationDelay: '1000ms' }}>
-              <button className="group flex items-center space-x-3 px-8 py-4 bg-transparent border-2 border-white rounded-full text-white font-semibold text-lg hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:scale-105">
+              <button className="group flex items-center space-x-3 px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-white rounded-full text-white font-semibold text-base sm:text-lg hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:scale-105">
                 <span>Our Impact</span>
-                <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transform group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           </div>
