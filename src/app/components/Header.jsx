@@ -31,7 +31,7 @@ const Header = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full animate-pulse"></div>
+
             </div>
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold text-gray-800">
