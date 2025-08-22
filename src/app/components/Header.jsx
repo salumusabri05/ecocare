@@ -33,11 +33,11 @@ const Header = () => {
               </div>
 
             </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-gray-800">
-                EcoCare
+            <div className="block">
+              <h1 className="text-base sm:text-xl font-bold text-gray-800 leading-tight">
+                EcoCare Alliance
               </h1> 
-              <p className="text-sm text-blue-600">
+              <p className="text-xs sm:text-sm text-blue-600 font-semibold">
                 FOUNDATION
               </p>
             </div>
@@ -49,7 +49,7 @@ const Header = () => {
               <div key={item.name} className="relative group">
                 <a
                   href={item.href}
-                  className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 text-blue-700 hover:text-blue-900 hover:bg-blue-50"
+                  className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-bold transition-all duration-300 hover:scale-105 text-blue-700 hover:text-blue-900 hover:bg-blue-50"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <span>{item.name}</span>
@@ -60,13 +60,13 @@ const Header = () => {
                 {item.hasDropdown && (
                   <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                     <div className="py-2">
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                      <a href="#" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
                         Our Story
                       </a>
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                      <a href="#" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
                         Our Team
                       </a>
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                      <a href="#" className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
                         Our Mission
                       </a>
                     </div>
@@ -94,7 +94,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="flex items-center justify-between px-4 py-3 text-blue-700 hover:text-blue-900 hover:bg-blue-100 transition-colors"
+                className="flex items-center justify-between px-4 py-3 text-blue-700 hover:text-blue-900 hover:bg-blue-100 transition-colors font-bold"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span>{item.name}</span>

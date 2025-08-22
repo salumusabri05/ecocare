@@ -1,13 +1,36 @@
 "use client";
-import React, { useState } from 'react';
-import { Facebook, Twitter, Instagram, Youtube, Linkedin, Leaf, ArrowUp, Heart, Mail, Phone, MapPin } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Facebook, Twitter, Instagram, Youtube, Linkedin, Leaf, ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const [hoveredSocial, setHoveredSocial] = useState(null);
-
+  const [isScrolled, setIsScrolled] = useState(false);
+  
+  // Handle scroll to top
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+  
+  // Add scroll event listener to show/hide the button
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button when scrolled down 300px or more
+      setIsScrolled(window.scrollY > 300);
+      
+      // Update button visibility class
+      const scrollButton = document.querySelector('.scroll-top-button');
+      if (scrollButton) {
+        if (window.scrollY > 300) {
+          scrollButton.classList.add('visible');
+        } else {
+          scrollButton.classList.remove('visible');
+        }
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const socialLinks = [
     { icon: Facebook, name: 'Facebook', color: 'bg-blue-600 hover:bg-blue-700', url: '#' },
@@ -213,19 +236,31 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Floating Action Buttons */}
-      <div className="fixed bottom-8 right-8 flex flex-col space-y-3 z-50">
+      {/* Scroll to Top Button - Only visible when scrolled */}
+      <div className="fixed bottom-8 right-8 z-50 scroll-to-top">
         <button
           onClick={scrollToTop}
-          className="w-12 h-12 bg-red-600 hover:bg-red-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+          className="w-12 h-12 bg-gradient-to-r from-green-500 to-yellow-400 hover:from-green-600 hover:to-yellow-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group opacity-0 invisible scroll-top-button"
         >
           <ArrowUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
         </button>
-        
-        <button className="w-12 h-12 bg-red-600 hover:bg-red-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group">
-          <Heart className="w-5 h-5 group-hover:scale-110 transition-transform" />
-        </button>
       </div>
+      
+      <style jsx>{`
+        /* Show scroll button only when scrolled down */
+        @media (min-width: 768px) {
+          :global(.scroll-top-button) {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+          }
+          
+          :global(.scroll-top-button.visible) {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      `}</style>
 
       {/* Decorative Elements */}
       <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 via-yellow-400 to-red-600"></div>

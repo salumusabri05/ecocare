@@ -22,27 +22,36 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 overflow-hidden">
-      {/* Hero Background Image */}
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Hero Background Image - Improved responsiveness */}
       <div className="absolute inset-0">
-        <img 
-          src="/hero.jpg" // Replace with your actual hero image path
-          alt="Community member with child"
-          className="w-full h-full object-cover object-center sm:object-right opacity-80"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-800/90 via-blue-700/70 to-blue-600/50"></div>
+        <picture>
+          {/* Mobile optimized image */}
+          <source media="(max-width: 640px)" srcSet="/hero.jpg" />
+          {/* Tablet optimized image */}
+          <source media="(max-width: 1024px)" srcSet="/hero.jpg" />
+          {/* Desktop image */}
+          <img 
+            src="/hero.jpg" // Default/fallback image
+            alt="Community member with child"
+            className="w-full h-full object-cover object-center md:object-[center_30%] xl:object-center"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </picture>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30"></div> {/* Improved gradient overlay for better text readability */}
       </div>
 
-      {/* Hero Content */}
-      <div className="relative flex items-center min-h-screen">
+      {/* Hero Content - Adjusted for better spacing */}
+      <div className="relative flex items-center min-h-screen pb-24 md:pb-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl pt-16 md:pt-0">
             {/* Main Heading */}
             <div className="space-y-2 sm:space-y-4 mb-6 sm:mb-8">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-white">
-                <span className="block animate-fadeInUp">CATALYSING</span>
+                <span className="block animate-fadeInUp">EMPOWERING </span>
                 <span className="block text-yellow-400 animate-fadeInUp" style={{ animationDelay: '200ms' }}>
-                  CHANGE
+                  COMMUNITIES
                 </span>
               </h1>
               
@@ -61,11 +70,22 @@ const Hero = () => {
               and create sustainable solutions—leveraging innovation, ICT, and AI to enhance the quality of life across Tanzania and beyond.
             </p>
 
-            {/* CTA Button */}
-            <div className="animate-fadeInUp" style={{ animationDelay: '1000ms' }}>
-              <button className="group flex items-center space-x-3 px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-white rounded-full text-white font-semibold text-base sm:text-lg hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:scale-105">
+            {/* CTA Buttons - Added floating animations and improved spacing */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-12 relative z-10">
+              {/* Our Impact Button */}
+              <button className="group flex items-center justify-center space-x-3 px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-white rounded-full text-white font-semibold text-base sm:text-lg hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:scale-105 animate-fadeInUp animate-float-small" style={{ animationDelay: '1000ms' }}>
                 <span>Our Impact</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transform group-hover:translate-x-1 transition-transform" />
+              </button>
+              
+              {/* Donate Button */}
+              <button className="group flex items-center justify-center space-x-2 px-6 sm:px-8 py-3 sm:py-4 bg-green-600 text-white rounded-full font-semibold text-base sm:text-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg animate-fadeInUp animate-float-medium" style={{ animationDelay: '1200ms' }}>
+                <span>Donate</span>
+              </button>
+              
+              {/* Volunteer Button */}
+              <button className="group flex items-center justify-center space-x-2 px-6 sm:px-8 py-3 sm:py-4 bg-yellow-500 text-blue-900 rounded-full font-semibold text-base sm:text-lg hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg animate-fadeInUp animate-float-large" style={{ animationDelay: '1400ms' }}>
+                <span>Volunteer</span>
               </button>
             </div>
           </div>
@@ -73,7 +93,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom gradient overlay for better text contrast */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-900/60 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent"></div>
 
       <style jsx>{`
         @keyframes fadeInUp {
@@ -87,8 +107,50 @@ const Hero = () => {
           }
         }
         
+        @keyframes float-small {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-5px);
+          }
+        }
+        
+        @keyframes float-medium {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-8px);
+          }
+        }
+        
+        @keyframes float-large {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+        
         .animate-fadeInUp {
           animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        .animate-float-small {
+          animation: float-small 3s ease-in-out infinite;
+          animation-delay: 1s;
+        }
+        
+        .animate-float-medium {
+          animation: float-medium 4s ease-in-out infinite;
+          animation-delay: 1.5s;
+        }
+        
+        .animate-float-large {
+          animation: float-large 5s ease-in-out infinite;
+          animation-delay: 2s;
         }
       `}</style>
     </div>
