@@ -22,41 +22,42 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative h-[345px] overflow-hidden">
       {/* Hero Background Image - Improved responsiveness */}
       <div className="absolute inset-0">
         <picture>
           {/* Mobile optimized image */}
-          <source media="(max-width: 640px)" srcSet="/hero.jpg" />
+          <source media="(max-width: 640px)" srcSet="/hero-mobile.jpg" />
           {/* Tablet optimized image */}
-          <source media="(max-width: 1024px)" srcSet="/hero.jpg" />
+          <source media="(max-width: 1024px)" srcSet="/hero-tablet.jpg" />
           {/* Desktop image */}
           <img 
             src="/hero.jpg" // Default/fallback image
             alt="Community member with child"
-            className="w-full h-full object-cover object-center md:object-[center_30%] xl:object-center"
+            className="w-full h-full object-cover object-center md:object-center"
             loading="eager"
             fetchpriority="high"
+            sizes="100vw"
           />
         </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30"></div> {/* Improved gradient overlay for better text readability */}
       </div>
 
-      {/* Hero Content - Adjusted for better spacing */}
-      <div className="relative flex items-center min-h-screen pb-24 md:pb-32">
+      {/* Hero Content - Adjusted for fixed height */}
+      <div className="relative flex items-center h-[345px]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl pt-16 md:pt-0">
-            {/* Main Heading */}
-            <div className="space-y-2 sm:space-y-4 mb-6 sm:mb-8">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-white">
+          <div className="max-w-4xl py-4">
+            {/* Main Heading - Reduced size for 345px height */}
+            <div className="space-y-1 sm:space-y-2 mb-2 sm:mb-3">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-white">
                 <span className="block animate-fadeInUp">EMPOWERING </span>
                 <span className="block text-yellow-400 animate-fadeInUp" style={{ animationDelay: '200ms' }}>
                   COMMUNITIES
                 </span>
               </h1>
               
-              {/* Animated subtitle */}
-              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
+              {/* Animated subtitle - Reduced size */}
+              <div className="text-base sm:text-xl md:text-2xl font-bold leading-tight">
                 <span className="block text-yellow-400 min-h-[1.2em]">
                   {animatedText}
                   <span className="animate-pulse">|</span>
@@ -64,27 +65,26 @@ const Hero = () => {
               </div>
             </div>
             
-            {/* Description */}
-            <p className="text-base sm:text-lg lg:text-xl text-white/90 max-w-2xl lg:max-w-3xl leading-relaxed mb-6 sm:mb-8 animate-fadeInUp" style={{ animationDelay: '800ms' }}>
-              We work with communities, partners, and stakeholders to improve health, protect the environment, 
-              and create sustainable solutions—leveraging innovation, ICT, and AI to enhance the quality of life across Tanzania and beyond.
+            {/* Description - Reduced and shortened for compact layout */}
+            <p className="text-sm sm:text-base text-white/90 max-w-2xl lg:max-w-3xl leading-snug mb-3 sm:mb-4 animate-fadeInUp" style={{ animationDelay: '800ms' }}>
+              Working with communities to improve health, protect the environment, and create sustainable solutions across Tanzania and beyond.
             </p>
 
-            {/* CTA Buttons - Added floating animations and improved spacing */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-12 relative z-10">
-              {/* Our Impact Button */}
-              <button className="group flex items-center justify-center space-x-3 px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-white rounded-full text-white font-semibold text-base sm:text-lg hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:scale-105 animate-fadeInUp animate-float-small" style={{ animationDelay: '1000ms' }}>
+            {/* CTA Buttons - Compact layout for smaller height */}
+            <div className="flex flex-row gap-2 sm:gap-3 mt-2 relative z-10">
+              {/* Our Impact Button - Smaller size */}
+              <button className="group flex items-center justify-center space-x-1 px-3 sm:px-4 py-1 sm:py-2 bg-transparent border-2 border-white rounded-full text-white font-semibold text-xs sm:text-sm hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:scale-105 animate-fadeInUp animate-float-small" style={{ animationDelay: '1000ms' }}>
                 <span>Our Impact</span>
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transform group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3 h-3 transform group-hover:translate-x-1 transition-transform" />
               </button>
               
-              {/* Donate Button */}
-              <button className="group flex items-center justify-center space-x-2 px-6 sm:px-8 py-3 sm:py-4 bg-green-600 text-white rounded-full font-semibold text-base sm:text-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg animate-fadeInUp animate-float-medium" style={{ animationDelay: '1200ms' }}>
+              {/* Donate Button - Smaller size */}
+              <button className="group flex items-center justify-center space-x-1 px-3 sm:px-4 py-1 sm:py-2 bg-green-600 text-white rounded-full font-semibold text-xs sm:text-sm hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg animate-fadeInUp animate-float-medium" style={{ animationDelay: '1200ms' }}>
                 <span>Donate</span>
               </button>
               
-              {/* Volunteer Button */}
-              <button className="group flex items-center justify-center space-x-2 px-6 sm:px-8 py-3 sm:py-4 bg-yellow-500 text-blue-900 rounded-full font-semibold text-base sm:text-lg hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg animate-fadeInUp animate-float-large" style={{ animationDelay: '1400ms' }}>
+              {/* Volunteer Button - Smaller size */}
+              <button className="group flex items-center justify-center space-x-1 px-3 sm:px-4 py-1 sm:py-2 bg-yellow-500 text-blue-900 rounded-full font-semibold text-xs sm:text-sm hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg animate-fadeInUp animate-float-large" style={{ animationDelay: '1400ms' }}>
                 <span>Volunteer</span>
               </button>
             </div>

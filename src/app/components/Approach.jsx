@@ -16,7 +16,7 @@ const OurApproach = () => {
     },
     {
       id: 2,
-      image: "/approach/ecocare1.jpg",
+      image: "/approach/ecocare1.jpg", 
       alt: "Community education and outreach program"
     },
     {
@@ -68,48 +68,46 @@ const OurApproach = () => {
   };
 
   return (
-    <section id="approach-section" className="py-12 lg:py-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="approach-section" className="py-16 bg-white">
+      <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
-        <div className={`max-w-4xl mb-12 lg:mb-16 transition-all duration-1000 ${
+        <div className={`mb-12 transition-all duration-1000 ${
           isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-800 mb-4 relative">
+          <h2 className="text-5xl font-bold text-blue-700 mb-2">
             Our Approach
-            <div className="w-24 sm:w-32 h-1 bg-red-500 mt-2"></div>
           </h2>
+          <div className="w-48 h-1 bg-red-500 mb-8"></div>
           
-          <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed mt-6 max-w-4xl">
+          <p className="text-lg text-gray-600 leading-relaxed max-w-5xl">
             We convene and partner with diverse stakeholders to champion bold ideas, empower communities, and inspire 
             sustainable solutions—driven by research, innovation, and collaboration in health, skills and agriculture.
           </p>
         </div>
 
         {/* Image Carousel Container */}
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative">
           <div className={`relative transition-all duration-1000 ${
             isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             {/* Desktop: Side by side images */}
             <div className="hidden lg:block relative">
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="flex h-[286px] gap-4 p-4">
-                  {/* Left Image */}
-                  <div className="w-1/2 relative rounded-lg overflow-hidden shadow-md">
-                    <img
-                      src={approaches[0].image}
-                      alt={approaches[0].alt}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  {/* Right Image */}
-                  <div className="w-1/2 relative rounded-lg overflow-hidden shadow-md">
-                    <img
-                      src={approaches[1].image}
-                      alt={approaches[1].alt}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+              <div className="flex gap-4 h-96">
+                {/* Left Image */}
+                <div className="w-1/2 relative overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    alt="Team meeting and collaboration"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Right Image */}
+                <div className="w-1/2 relative overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    alt="Community environmental cleanup"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
@@ -131,53 +129,56 @@ const OurApproach = () => {
 
             {/* Mobile/Tablet: Single image carousel */}
             <div className="lg:hidden relative">
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="relative h-[200px] sm:h-[250px] md:h-[286px]">
-                  <div 
-                    className="flex transition-transform duration-700 ease-in-out h-full"
-                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                  >
-                    {approaches.map((approach) => (
-                      <div key={approach.id} className="w-full flex-shrink-0 h-full">
-                        <img
-                          src={approach.image}
-                          alt={approach.alt}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Navigation Arrows for Mobile */}
-                <button
-                  onClick={prevSlide}
-                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400 hover:bg-yellow-500 text-gray-800 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-110 z-10"
+              <div className="relative h-64 sm:h-80 md:h-96 overflow-hidden">
+                <div 
+                  className="flex transition-transform duration-700 ease-in-out h-full"
+                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                 >
-                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-                </button>
-                
-                <button
-                  onClick={nextSlide}
-                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400 hover:bg-yellow-500 text-gray-800 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-110 z-10"
-                >
-                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-                </button>
-
-                {/* Slide Indicators for Mobile */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                  {approaches.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => goToSlide(index)}
-                      className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                        currentSlide === index
-                          ? 'bg-white scale-125'
-                          : 'bg-white/50 hover:bg-white/75'
-                      }`}
-                    />
+                  {[
+                    "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                    "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                  ].map((src, index) => (
+                    <div key={index} className="w-full flex-shrink-0 h-full">
+                      <img
+                        src={src}
+                        alt={approaches[index]?.alt}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   ))}
                 </div>
+              </div>
+
+              {/* Navigation Arrows for Mobile */}
+              <button
+                onClick={prevSlide}
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400 hover:bg-yellow-500 text-gray-800 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-110 z-10"
+              >
+                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
+              
+              <button
+                onClick={nextSlide}
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400 hover:bg-yellow-500 text-gray-800 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-110 z-10"
+              >
+                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
+
+              {/* Slide Indicators for Mobile */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                {approaches.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                      currentSlide === index
+                        ? 'bg-white scale-125'
+                        : 'bg-white/50 hover:bg-white/75'
+                    }`}
+                  />
+                ))}
               </div>
             </div>
 
@@ -197,9 +198,6 @@ const OurApproach = () => {
             </div>
           </div>
         </div>
-
-        {/* Bottom spacing */}
-        <div className="h-8 lg:h-12"></div>
       </div>
     </section>
   );
