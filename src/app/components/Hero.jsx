@@ -92,8 +92,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Bottom gradient overlay for better text contrast */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent"></div>
+      {/* Bottom gradient overlay - Reduced height for compact hero */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/60 to-transparent"></div>
 
       <style jsx>{`
         @keyframes fadeInUp {
