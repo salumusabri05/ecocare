@@ -25,9 +25,9 @@ const FeaturedProjects = () => {
     },
     {
       id: 3,
-      title: "Skills Development Program",
-      description: "Comprehensive training programs in technical and vocational skills to empower youth with employment opportunities.",
-      ctaText: "Discover More",
+      title: "Maternal Health Project",
+      description: "Helping antenatal mothers access essential healthcare services and support.",
+      ctaText: "Explore the program",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       overlay: "bg-black/50"
     },
@@ -35,7 +35,7 @@ const FeaturedProjects = () => {
       id: 4,
       title: "Sustainable Agriculture Initiative",
       description: "Training farmers in modern, sustainable agricultural practices to improve food security and economic development.",
-      ctaText: "View Program",
+      ctaText: "Explore the program",
       image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       overlay: "bg-black/50"
     }
