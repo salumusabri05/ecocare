@@ -9,8 +9,8 @@ const FeaturedProjects = () => {
   const projects = [
     {
       id: 1,
-      title: "Kijana Leo: Our Flagship Program",
-      description: "A Swahili TV show empowering Tanzanian youth through entrepreneurship and social innovation. Features young changemakers driving development.",
+      title: "Blood Donation",
+      description: "A program aimed at increasing blood donation awareness and accessibility.",
       ctaText: "Explore the Program",
       image: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       overlay: "bg-black/60"
@@ -19,9 +19,9 @@ const FeaturedProjects = () => {
       id: 2,
       title: "Community Health Initiative",
       description: "Bringing essential healthcare services to remote communities through mobile clinics and community health worker training programs.",
-      ctaText: "Learn More",
+      ctaText: "Explore the program",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      overlay: "bg-black/50"
+      overlay: "bg-black/60"
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ const FeaturedProjects = () => {
       description: "Helping antenatal mothers access essential healthcare services and support.",
       ctaText: "Explore the program",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      overlay: "bg-black/50"
+      overlay: "bg-black/60"
     },
     {
       id: 4,
@@ -37,7 +37,7 @@ const FeaturedProjects = () => {
       description: "Training farmers in modern, sustainable agricultural practices to improve food security and economic development.",
       ctaText: "Explore the program",
       image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      overlay: "bg-black/50"
+      overlay: "bg-black/60"
     }
   ];
 
@@ -106,7 +106,7 @@ const FeaturedProjects = () => {
           <div className={`relative transition-all duration-1000 ${
             isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`} style={{ transitionDelay: '400ms' }}>
-            <div className="relative h-64 overflow-hidden">
+            <div className="relative h-96 lg:h-full min-h-96 overflow-hidden">
               <img
                 src={projects[1].image}
                 alt={projects[1].title}
@@ -137,7 +137,7 @@ const FeaturedProjects = () => {
           <div className={`relative transition-all duration-1000 ${
             isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`} style={{ transitionDelay: '600ms' }}>
-            <div className="relative h-64 overflow-hidden">
+            <div className="relative h-96 lg:h-full min-h-96 overflow-hidden">
               <img
                 src={projects[2].image}
                 alt={projects[2].title}

@@ -36,7 +36,7 @@ const Hero = () => {
             alt="Community member with child"
             className="w-full h-full object-cover object-center md:object-center"
             loading="eager"
-            fetchpriority="high"
+            fetchPriority="high"
             sizes="100vw"
           />
         </picture>
