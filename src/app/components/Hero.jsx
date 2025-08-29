@@ -27,9 +27,9 @@ const Hero = () => {
       <div className="absolute inset-0">
         <picture>
           {/* Mobile optimized image */}
-          <source media="(max-width: 640px)" srcSet="/hero-mobile.jpg" />
+          <source media="(max-width: 640px)" srcSet="/hero.jpg" />
           {/* Tablet optimized image */}
-          <source media="(max-width: 1024px)" srcSet="/hero-tablet.jpg" />
+          <source media="(max-width: 1024px)" srcSet="/hero.jpg" />
           {/* Desktop image */}
           <img 
             src="/hero.jpg" // Default/fallback image
