@@ -40,9 +40,10 @@ const SupportOurMission = () => {
           {/* Description Text */}
           <div className="max-w-3xl mx-auto mb-10">
             <p className="text-xl text-gray-800 leading-relaxed font-normal">
-              Join us in making a better tomorrow. We imagine a better future and are committed 
-              to making it come true. Your contribution will help facilitate and ease our daily 
-              activities in <strong className="text-gray-900">transforming people's lives</strong>.
+              Join us in our vision for a healthy and sustainable future where every person has access 
+              to healthcare and lives in harmony with nature. Your contribution will support our work in 
+              <strong className="text-gray-900"> transforming lives across Tanzania</strong> through healthcare, 
+              environmental conservation, and community empowerment.
             </p>
           </div>
 

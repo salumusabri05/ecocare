@@ -27,7 +27,7 @@ const OurApproach = () => {
     {
       id: 4,
       image: "/approach/ecocare1.jpg",
-      alt: "Water and sanitation projects"
+      alt: "Blood donation campaign in Biharamulo District"
     }
   ];
 
@@ -80,8 +80,9 @@ const OurApproach = () => {
           <div className="w-48 h-1 bg-red-500 mb-8"></div>
           
           <p className="text-lg text-gray-600 leading-relaxed max-w-5xl">
-            We convene and partner with diverse stakeholders to champion bold ideas, empower communities, and inspire 
-            sustainable solutions—driven by research, innovation, and collaboration in health, skills and agriculture.
+            Our mission is to provide healthcare services, promote health education, champion environmental conservation, 
+            and empower communities through sustainable initiatives—driven by our core values of compassion, integrity, 
+            sustainability, collaboration, and innovation.
           </p>
         </div>
 

@@ -67,7 +67,7 @@ const Hero = () => {
             
             {/* Description - Reduced and shortened for compact layout */}
             <p className="text-sm sm:text-base text-white/90 max-w-2xl lg:max-w-3xl leading-snug mb-3 sm:mb-4 animate-fadeInUp" style={{ animationDelay: '800ms' }}>
-              Working with communities to improve health, protect the environment, and create sustainable solutions across Tanzania and beyond.
+              A registered NGO in Tanzania (Reg. No. 00NGO/R/8467) connecting human health and environmental sustainability to improve community well-being while protecting the planet.
             </p>
 
             {/* CTA Buttons - Compact layout for smaller height */}

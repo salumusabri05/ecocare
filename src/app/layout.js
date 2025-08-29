@@ -11,8 +11,8 @@ const andika = Andika({
 });
 
 export const metadata = {
-  title: "EcoCare Foundation | Catalysing Change Across Africa",
-  description: "We work with governments and stakeholders to drive change and improve the quality of lives across Africa through environmental sustainability and social development.",
+  title: "EcoCare Alliance Foundation | Connecting Health and Environment",
+  description: "A registered NGO in Tanzania (Reg. No. 00NGO/R/8467) dedicated to providing healthcare services, promoting health education, championing environmental conservation, and empowering communities through sustainable initiatives.",
 };
 
 export default function RootLayout({ children }) {

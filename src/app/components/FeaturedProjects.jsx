@@ -9,33 +9,33 @@ const FeaturedProjects = () => {
   const projects = [
     {
       id: 1,
-      title: "Blood Donation",
-      description: "A program aimed at increasing blood donation awareness and accessibility.",
-      ctaText: "Explore the Program",
+      title: "\"Give Life\" Blood Donation Campaign",
+      description: "Our flagship campaign ensuring hospitals have enough blood supplies, with over 500 units collected in Biharamulo District alone.",
+      ctaText: "Explore the Campaign",
       image: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       overlay: "bg-black/60"
     },
     {
       id: 2,
-      title: "Community Health Initiative",
-      description: "Bringing essential healthcare services to remote communities through mobile clinics and community health worker training programs.",
-      ctaText: "Explore the program",
+      title: "Healthcare Services",
+      description: "Providing free or affordable healthcare to underserved communities, with hundreds of people reached through our outreach programs.",
+      ctaText: "Learn More",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       overlay: "bg-black/60"
     },
     {
       id: 3,
-      title: "Maternal Health Project",
-      description: "Helping antenatal mothers access essential healthcare services and support.",
-      ctaText: "Explore the program",
+      title: "Tree Planting & Reforestation",
+      description: "Communities mobilized for environmental protection through tree planting initiatives and sustainable practices education.",
+      ctaText: "Join Our Efforts",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       overlay: "bg-black/60"
     },
     {
       id: 4,
-      title: "Sustainable Agriculture Initiative",
-      description: "Training farmers in modern, sustainable agricultural practices to improve food security and economic development.",
-      ctaText: "Explore the program",
+      title: "Helmet Cleaning Vendor Machine",
+      description: "An innovative solution improving hygiene and safety in transportation, demonstrating our commitment to health and environmental sustainability.",
+      ctaText: "Discover the Innovation",
       image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       overlay: "bg-black/60"
     }

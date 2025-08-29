@@ -10,38 +10,38 @@ const LatestNews = () => {
   const newsItems = [
     {
       id: 1,
-      date: "Jun 16, 2025",
-      title: "Environment Action For Change: EcoCare Marks World Environment Day with Youth-Focused Action in Bagamoyo",
-      excerpt: "On June 5th, in celebration of World Environment Day, EcoCare Foundation in partnership with local organizations launched a comprehensive environmental awareness campaign...",
-      readTime: "5 min read",
-      category: "Environmental",
+      date: "Aug 15, 2025",
+      title: "EcoCare Alliance Foundation Officially Registered as NGO in Tanzania",
+      excerpt: "We are proud to announce that EcoCare Alliance Foundation is now a registered NGO in Tanzania (Reg. No. 00NGO/R/8467, registered on 23rd May 2025), dedicated to connecting human health and environmental sustainability...",
+      readTime: "3 min read",
+      category: "Foundation News",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
     },
     {
       id: 2,
-      date: "Jun 12, 2025",
-      title: "Building Business Skills That Last: Training Tanzania's Youth to Scale Their Businesses to New Heights",
-      excerpt: "Across Tanzania, young people are brimming with ideas and the entrepreneurial spirit is alive and well. However, turning these ideas into thriving businesses requires more than just passion...",
+      date: "Jul 28, 2025",
+      title: "Youth and Women Empowerment Initiative Launches Across Tanzania",
+      excerpt: "EcoCare Alliance Foundation has launched a comprehensive program to empower youth and women in communities throughout Tanzania, focusing on leadership skills and environmental action...",
       readTime: "4 min read",
-      category: "Business Training",
+      category: "Community Programs",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
     },
     {
       id: 3,
-      date: "Jun 8, 2025",
-      title: "Sustainable Agriculture Training Program Graduates First Cohort of 200 Farmers",
-      excerpt: "Local farmers celebrate as they complete comprehensive training in sustainable farming practices, equipped with new knowledge and tools for eco-friendly agriculture...",
-      readTime: "6 min read",
-      category: "Agriculture",
+      date: "Jul 12, 2025",
+      title: "Blood Donation Campaign Collects Over 500 Units in Biharamulo District",
+      excerpt: "Our \"Give Life\" Blood Donation Campaign has achieved significant impact in Biharamulo District, collecting over 500 units of blood to support local hospitals and health centers...",
+      readTime: "5 min read",
+      category: "Healthcare",
       image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
     },
     {
       id: 4,
-      date: "Jun 4, 2025",
-      title: "Educational Technology Initiative Launches in 10 Schools Across Dar es Salaam",
-      excerpt: "EcoCare Foundation introduces innovative digital learning platforms to enhance educational outcomes in primary and secondary schools throughout the region...",
+      date: "Jun 25, 2025",
+      title: "EcoCare Introduces Innovative Helmet Cleaning Vendor Machine",
+      excerpt: "In our commitment to improving hygiene and safety, we've developed a Helmet Cleaning Vendor Machine that offers a sustainable solution for motorbike riders and passengers...",
       readTime: "3 min read",
-      category: "Education",
+      category: "Innovation",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
     }
   ];

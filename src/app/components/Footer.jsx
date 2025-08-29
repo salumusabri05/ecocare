@@ -43,9 +43,9 @@ const Footer = () => {
   const footerLinks = {
     programs: [
       { name: 'About Us', href: '#' },
-      { name: 'Health Programs', href: '#' },
-      { name: 'Youth Programs', href: '#' },
-      { name: 'Agriculture Programs', href: '#' }
+      { name: 'Healthcare Initiatives', href: '#' },
+      { name: 'Environmental Projects', href: '#' },
+      { name: 'Community Campaigns', href: '#' }
     ],
     resources: [
       { name: 'Contact', href: '#' },

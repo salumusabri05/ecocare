@@ -8,24 +8,24 @@ const KeyFocusAreas = () => {
   const focusAreas = [
     {
       id: 1,
-      title: "Health",
-      description: "The Foundation's key health programs involves Reproductive, Maternal, New-born, Child and Adolescent Health, and Nutrition.",
+      title: "Healthcare Initiatives",
+      description: "We provide free or affordable healthcare to underserved communities, promote mental health awareness, and run education programs on nutrition, hygiene, and disease prevention.",
       image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       buttonColor: "bg-yellow-400 hover:bg-yellow-500",
       titleColor: "text-gray-900"
     },
     {
       id: 2,
-      title: "Skills",
-      description: "The skills for employment programs promotes equal access to affordable technical, vocational, and higher education for young people.",
+      title: "Environmental Projects",
+      description: "Our environmental work includes tree planting and reforestation, waste management and clean-up campaigns, and innovative solutions like the Helmet Cleaning Vendor Machine.",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       buttonColor: "bg-blue-600 hover:bg-blue-700",
       titleColor: "text-blue-600"
     },
     {
       id: 3,
-      title: "Agriculture",
-      description: "We strive to ensure a transformed agriculture that lifts people from poverty for inclusive growth and sustainable development.",
+      title: "Community Campaigns",
+      description: "We run the \"Give Life\" Blood Donation Campaign ensuring hospitals have enough blood supplies, and lead youth and women empowerment initiatives across communities.",
       image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       buttonColor: "bg-blue-600 hover:bg-blue-700",
       titleColor: "text-blue-600"
