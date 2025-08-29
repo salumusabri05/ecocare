@@ -77,7 +77,7 @@ const Header = () => {
               <div key={item.name} className="relative group">
                 <a
                   href={item.href}
-                  className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-bold transition-all duration-300 hover:scale-105 text-blue-700 hover:text-blue-900 hover:bg-blue-50"
+                  className="flex items-center space-x-1 px-3 py-2 rounded-md text-lg font-bold transition-all duration-300 hover:scale-105 text-blue-700 hover:text-blue-900 hover:bg-blue-50"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <span>{item.name}</span>
