@@ -40,7 +40,7 @@ const Hero = () => {
             sizes="100vw"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30"></div> {/* Improved gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-green-800/60 to-emerald-700/40"></div> {/* Green gradient overlay instead of black */}
       </div>
 
       {/* Hero Content - Adjusted for fixed height */}
@@ -93,7 +93,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom gradient overlay - Reduced height for compact hero */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/60 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-green-800/50 to-transparent"></div>
 
       <style jsx>{`
         @keyframes fadeInUp {
