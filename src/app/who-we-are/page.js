@@ -75,16 +75,18 @@ export default function WhoWeAre() {
               <div className="inline-block bg-blue-100 px-3 py-1 rounded-full mb-4">
                 <span className="text-sm font-semibold text-blue-800">About Us</span>
               </div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">About EcoCare Alliance Foundation</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">About SmartCare Africa Foundation</h2>
               <div className="w-20 h-1 bg-blue-600 mb-8"></div>
               <p className="text-gray-700 mb-6 leading-relaxed text-lg">
-                EcoCare Alliance Foundation is a registered NGO in Tanzania (Reg. No. 00NGO/R/8467, registered on 23rd May 2025) 
+                SmartCare Africa Foundation is a registered NGO in Tanzania (Reg. No. 00NGO/R/8467, registered on 23rd May 2025)
                 that works at the intersection of human health and environmental sustainability. Our work aims to improve 
                 community well-being while protecting the planet for future generations.
               </p>
+              <p className="text-gray-700 mb-6 leading-relaxed text-lg">
+                The Foundation was established to improve public health, promote sustainability, and ensure healthcare access for marginalized populations. In Biharamulo District, several challenges necessitated its creation. A significant issue was the Marburg virus outbreak, which posed a severe public health crisis, exacerbating existing struggles with sanitation-related diseases such as cholera, dysentery, and typhoid. Additionally, environmental pollution from mismanaged livestock led to waste buildup, water contamination, and land degradation. Cultural barriers further hindered the adoption of modern hygiene practices, while limited education and poor infrastructure restricted access to solutions.
+              </p>
               <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-                Founded with a vision of creating a healthy and sustainable future, we believe that every person deserves 
-                access to quality healthcare and the right to live in harmony with nature.
+                The foundation addresses these issues by raising awareness, reducing health disparities, and providing essential services to affected communities. Through targeted interventions, it seeks to improve hygiene, promote sustainable practices, and ensure better healthcare accessibility, ultimately fostering a healthier and more resilient society.
               </p>
               <div className="flex items-center space-x-6">
                 <div className="text-center">
@@ -143,6 +145,62 @@ export default function WhoWeAre() {
                   </p>
                 </div>
               </div>
+            </div>
+          </section>
+
+          {/* Objectives */}
+          <section id="objectives" className="max-w-6xl mx-auto mb-24">
+            <div className="text-center mb-16">
+              <div className="inline-block bg-blue-100 px-4 py-1 rounded-full mb-3">
+                <span className="text-sm font-semibold text-blue-800">Our Goals</span>
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-2">Our Objectives</h2>
+              <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                The Organization will pursue the following objectives:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  description: "To provide free or affordable health care services to disadvantaged populations.",
+                  color: "bg-blue-50",
+                  borderColor: "border-blue-200"
+                },
+                {
+                  description: "To promote health education and awareness campaigns on issues like hygiene, nutrition, maternal health, and disease prevention.",
+                  color: "bg-green-50",
+                  borderColor: "border-green-200"
+                },
+                {
+                  description: "To support mental health initiatives and improve access to mental health services.",
+                  color: "bg-yellow-50",
+                  borderColor: "border-yellow-200"
+                },
+                {
+                  description: "To reduce health disparities and promote health equity.",
+                  color: "bg-red-50",
+                  borderColor: "border-red-200"
+                },
+                {
+                  description: "To advocate for policy changes that support access to healthcare, especially for affected communities.",
+                  color: "bg-purple-50",
+                  borderColor: "border-purple-200"
+                },
+                {
+                  description: "To collaborate with other organizations, governments, and institutions working in the field of health to improve public health outcomes.",
+                  color: "bg-indigo-50",
+                  borderColor: "border-indigo-200"
+                }
+              ].map((value, index) => (
+                <div
+                  key={index}
+                  className={`${value.color} p-6 rounded-xl border-2 ${value.borderColor} shadow-lg transform transition-transform hover:-translate-y-2`}
+                >
+                  <p className="text-gray-700 text-lg">{value.description}</p>
+                </div>
+              ))}
             </div>
           </section>
 
