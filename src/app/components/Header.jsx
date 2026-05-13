@@ -53,7 +53,7 @@ const Header = () => {
               <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/logo/logo.jpg"
-                  alt="EcoCare Alliance Foundation Logo"
+                  alt="SmartCare Africa Foundation Logo"
                   width={48}
                   height={48}
                   className="w-full h-full object-cover"
@@ -63,7 +63,7 @@ const Header = () => {
             </div>
             <div className="block">
               <h1 className="text-base sm:text-xl font-bold text-gray-800 leading-tight group-hover:text-blue-700 transition-colors">
-                EcoCare Alliance
+                SmartCare Africa
               </h1> 
               <p className="text-xs sm:text-sm text-blue-600 font-semibold">
                 FOUNDATION

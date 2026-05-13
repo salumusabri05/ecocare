@@ -11,8 +11,8 @@ const LatestNews = () => {
     {
       id: 1,
       date: "Aug 15, 2025",
-      title: "EcoCare Alliance Foundation Officially Registered as NGO in Tanzania",
-      excerpt: "We are proud to announce that EcoCare Alliance Foundation is now a registered NGO in Tanzania (Reg. No. 00NGO/R/8467, registered on 23rd May 2025), dedicated to connecting human health and environmental sustainability...",
+      title: "SmartCare Africa Foundation Officially Registered as NGO in Tanzania",
+      excerpt: "We are proud to announce that SmartCare Africa Foundation is now a registered NGO in Tanzania (Reg. No. 00NGO/R/8467, registered on 23rd May 2025), dedicated to connecting human health and environmental sustainability...",
       readTime: "3 min read",
       category: "Foundation News",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
@@ -21,7 +21,7 @@ const LatestNews = () => {
       id: 2,
       date: "Jul 28, 2025",
       title: "Youth and Women Empowerment Initiative Launches Across Tanzania",
-      excerpt: "EcoCare Alliance Foundation has launched a comprehensive program to empower youth and women in communities throughout Tanzania, focusing on leadership skills and environmental action...",
+      excerpt: "SmartCare Africa Foundation has launched a comprehensive program to empower youth and women in communities throughout Tanzania, focusing on leadership skills and environmental action...",
       readTime: "4 min read",
       category: "Community Programs",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
@@ -38,7 +38,7 @@ const LatestNews = () => {
     {
       id: 4,
       date: "Jun 25, 2025",
-      title: "EcoCare Introduces Innovative Helmet Cleaning Vendor Machine",
+      title: "SmartCare Africa Introduces Innovative Helmet Cleaning Vendor Machine",
       excerpt: "In our commitment to improving hygiene and safety, we've developed a Helmet Cleaning Vendor Machine that offers a sustainable solution for motorbike riders and passengers...",
       readTime: "3 min read",
       category: "Innovation",

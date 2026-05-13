@@ -392,7 +392,7 @@ export default function Contact() {
                     <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                       <MapPin className="w-8 h-8 text-green-700" />
                     </div>
-                    <h3 className="font-bold text-lg mb-2">EcoCare Alliance Foundation</h3>
+                    <h3 className="font-bold text-lg mb-2">SmartCare Africa Foundation</h3>
                     <p className="text-gray-600">Biharamulo District, Kagera Region, Tanzania</p>
                   </div>
                 </div>
@@ -413,19 +413,19 @@ export default function Contact() {
           <div className="max-w-3xl mx-auto">
             {[
               {
-                question: "How can I volunteer with EcoCare Alliance?",
+                question: "How can I volunteer with SmartCare Africa?",
                 answer: "We welcome volunteers in various capacities. You can fill out our volunteer application form online or contact us directly through email or phone to discuss volunteer opportunities that match your skills and interests."
               },
               {
-                question: "How are donations to EcoCare Alliance used?",
+                question: "How are donations to SmartCare Africa used?",
                 answer: "Donations are directly used to fund our healthcare initiatives, environmental projects, and community development programs in Tanzania. We maintain transparency about fund allocation and provide reports to our donors."
               },
               {
-                question: "Can organizations partner with EcoCare Alliance?",
+                question: "Can organizations partner with SmartCare Africa?",
                 answer: "Yes, we actively seek partnerships with organizations that share our values and goals. We collaborate with NGOs, government agencies, businesses, and educational institutions on various projects and initiatives."
               },
               {
-                question: "How can I stay updated on EcoCare Alliance's activities?",
+                question: "How can I stay updated on SmartCare Africa's activities?",
                 answer: "You can subscribe to our newsletter, follow us on social media platforms, or visit our website regularly for updates on our programs, events, and impact stories."
               }
             ].map((faq, index) => (

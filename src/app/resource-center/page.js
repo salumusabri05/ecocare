@@ -469,7 +469,7 @@ export default function ResourceCenter() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  title: "EcoCare Launches New Health Initiative",
+                  title: "SmartCare Africa Launches New Health Initiative",
                   date: "August 25, 2025",
                   category: "Healthcare",
                   color: "bg-green-100 text-green-800",

@@ -11,7 +11,7 @@ const andika = Andika({
 });
 
 export const metadata = {
-  title: "EcoCare Alliance Foundation | Connecting Health and Environment",
+  title: "SmartCare Africa Foundation | Connecting Health and Environment",
   description: "A registered NGO in Tanzania (Reg. No. 00NGO/R/8467) dedicated to providing healthcare services, promoting health education, championing environmental conservation, and empowering communities through sustainable initiatives.",
 };
 

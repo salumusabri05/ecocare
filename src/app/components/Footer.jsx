@@ -79,7 +79,7 @@ const Footer = () => {
                 <div className="absolute -top-1 -right-1 w-5 h-5 bg-yellow-400 rounded-full animate-pulse"></div>
               </div>
               <div>
-                <h3 className="text-2xl lg:text-3xl font-bold">EcoCare</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold">SmartCare Africa</h3>
                 <p className="text-red-200 text-sm">FOUNDATION</p>
               </div>
             </div>
@@ -215,7 +215,7 @@ const Footer = () => {
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0 text-sm">
             <div className="text-red-200 text-center lg:text-left">
               <p className="mb-1">
-                © 2025 | EcoCare is a registered trust and non-profit organization under the Trustees'
+                © 2025 | SmartCare Africa is a registered trust and non-profit organization under the Trustees'
               </p>
               <p>
                 Incorporation Act (Cap.318 R.E.2002) of Tanzania, with reg No.5410.
@@ -229,7 +229,7 @@ const Footer = () => {
               <span className="text-red-500">|</span>
               <a href="#" className="hover:text-white transition-colors flex items-center space-x-2">
                 <span>Built by</span>
-                <span className="text-yellow-400 hover:text-yellow-300 font-medium">EcoCare Alliance Foundation</span>
+                <span className="text-yellow-400 hover:text-yellow-300 font-medium">SmartCare Africa Foundation</span>
               </a>
             </div>
           </div>
