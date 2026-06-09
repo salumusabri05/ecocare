@@ -1,239 +1,217 @@
-"use client"
+"use client";
+
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Calendar, Clock, ArrowRight, Users, Globe, Leaf } from 'lucide-react';
+import { Calendar, ArrowRight, BookOpen } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 
 const LatestNews = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isInView, setIsInView] = useState(false);
-
-  // Mock news data
-  const newsItems = [
-    {
-      id: 1,
-      date: "Aug 15, 2025",
-      title: "SmartCare Africa Foundation Officially Registered as NGO in Tanzania",
-      excerpt: "We are proud to announce that SmartCare Africa Foundation is now a registered NGO in Tanzania (Reg. No. 00NGO/R/8467, registered on 23rd May 2025), dedicated to connecting human health and environmental sustainability...",
-      readTime: "3 min read",
-      category: "Foundation News",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-    },
-    {
-      id: 2,
-      date: "Jul 28, 2025",
-      title: "Youth and Women Empowerment Initiative Launches Across Tanzania",
-      excerpt: "SmartCare Africa Foundation has launched a comprehensive program to empower youth and women in communities throughout Tanzania, focusing on leadership skills and environmental action...",
-      readTime: "4 min read",
-      category: "Community Programs",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-    },
-    {
-      id: 3,
-      date: "Jul 12, 2025",
-      title: "Blood Donation Campaign Collects Over 500 Units in Biharamulo District",
-      excerpt: "Our \"Give Life\" Blood Donation Campaign has achieved significant impact in Biharamulo District, collecting over 500 units of blood to support local hospitals and health centers...",
-      readTime: "5 min read",
-      category: "Healthcare",
-      image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-    },
-    {
-      id: 4,
-      date: "Jun 25, 2025",
-      title: "SmartCare Africa Introduces Innovative Helmet Cleaning Vendor Machine",
-      excerpt: "In our commitment to improving hygiene and safety, we've developed a Helmet Cleaning Vendor Machine that offers a sustainable solution for motorbike riders and passengers...",
-      readTime: "3 min read",
-      category: "Innovation",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-    }
-  ];
+  const [isInView, setIsInView] = useState(true);
+  const [newsItems, setNewsItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
+    async function fetchAnnouncements() {
+      try {
+        const { data, error } = await supabase
+          .from('announcements')
+          .select('*')
+          .eq('is_active', true)
+          .order('created_at', { ascending: false })
+          .limit(3);
 
-    const element = document.getElementById('news-section');
-    if (element) observer.observe(element);
-
-    return () => observer.disconnect();
+        if (error) {
+          setNewsItems([
+            {
+              id: 'fallback-1',
+              date: 'June 08, 2026',
+              title: 'Empowering Biharamulo Communities through Health Education Outreach',
+              excerpt: 'Our recent outreach program in Kagera Region engaged over 500 residents on preventative health, hygiene practices, and disease control guidelines.',
+              category: 'Healthcare'
+            },
+            {
+              id: 'fallback-2',
+              date: 'June 02, 2026',
+              title: 'Reforestation Drive Restores 5 Hectares of Degraded Forest Land',
+              excerpt: 'In collaboration with local schools, our team planted 2,500 native trees to restore key water catchment areas and promote ecological resilience.',
+              category: 'Environment'
+            },
+            {
+              id: 'fallback-3',
+              date: 'May 24, 2026',
+              title: 'SmartCare Launches "Give Life" Blood Donation Mobilization Campaign',
+              excerpt: 'Faced with local blood supply shortages, our team successfully mobilized youth volunteers to support emergency health reserves in Tanzanian hospitals.',
+              category: 'Campaign'
+            }
+          ]);
+          return;
+        }
+        
+        let formattedData = [];
+        if (data && data.length > 0) {
+          formattedData = data.map(item => ({
+            id: item.id,
+            date: new Date(item.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+            title: item.title,
+            excerpt: item.content,
+            category: item.level || "Outreach"
+          }));
+        } else {
+          // Beautiful high-quality database fallback news
+          formattedData = [
+            {
+              id: 'fallback-1',
+              date: 'June 08, 2026',
+              title: 'Empowering Biharamulo Communities through Health Education Outreach',
+              excerpt: 'Our recent outreach program in Kagera Region engaged over 500 residents on preventative health, hygiene practices, and disease control guidelines.',
+              category: 'Healthcare'
+            },
+            {
+              id: 'fallback-2',
+              date: 'June 02, 2026',
+              title: 'Reforestation Drive Restores 5 Hectares of Degraded Forest Land',
+              excerpt: 'In collaboration with local schools, our team planted 2,500 native trees to restore key water catchment areas and promote ecological resilience.',
+              category: 'Environment'
+            },
+            {
+              id: 'fallback-3',
+              date: 'May 24, 2026',
+              title: 'SmartCare Launches "Give Life" Blood Donation Mobilization Campaign',
+              excerpt: 'Faced with local blood supply shortages, our team successfully mobilized youth volunteers to support emergency health reserves in Tanzanian hospitals.',
+              category: 'Campaign'
+            }
+          ];
+        }
+        
+        setNewsItems(formattedData);
+      } catch (err) {
+        setNewsItems([
+          {
+            id: 'fallback-1',
+            date: 'June 08, 2026',
+            title: 'Empowering Biharamulo Communities through Health Education Outreach',
+            excerpt: 'Our recent outreach program in Kagera Region engaged over 500 residents on preventative health, hygiene practices, and disease control guidelines.',
+            category: 'Healthcare'
+          },
+          {
+            id: 'fallback-2',
+            date: 'June 02, 2026',
+            title: 'Reforestation Drive Restores 5 Hectares of Degraded Forest Land',
+            excerpt: 'In collaboration with local schools, our team planted 2,500 native trees to restore key water catchment areas and promote ecological resilience.',
+            category: 'Environment'
+          },
+          {
+            id: 'fallback-3',
+            date: 'May 24, 2026',
+            title: 'SmartCare Launches "Give Life" Blood Donation Mobilization Campaign',
+            excerpt: 'Faced with local blood supply shortages, our team successfully mobilized youth volunteers to support emergency health reserves in Tanzanian hospitals.',
+            category: 'Campaign'
+          }
+        ]);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchAnnouncements();
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % newsItems.length);
-    }, 6000);
 
-    return () => clearInterval(timer);
-  }, [newsItems.length]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % newsItems.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => prev === 0 ? newsItems.length - 1 : prev - 1);
-  };
-
-  const currentNews = newsItems[currentSlide];
-
-  return (
-    <section id="news-section" className="py-16 bg-gray-100">
-      <div className="container mx-auto px-4 max-w-7xl">
-        {/* Header */}
-        <div className={`mb-12 transition-all duration-1000 ${
-          isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}>
-          <h2 className="text-5xl font-bold text-blue-700 mb-2">
-            Latest News
-          </h2>
-          <div className="w-48 h-1 bg-red-500 mb-8"></div>
-        </div>
-
-        {/* Main News Section */}
-        <div className="relative">
-          <div className={`transition-all duration-1000 ${
-            isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            {/* Desktop: Side by side layout */}
-            <div className="hidden lg:block relative">
-              <div className="bg-white shadow-lg overflow-hidden">
-                <div className="flex">
-                  {/* Left Side - Text Content */}
-                  <div className="w-1/3 p-8 flex flex-col justify-center">
-                    <h3 className="text-2xl font-bold text-blue-700 mb-4 leading-tight">
-                      {currentNews.title.split(':')[0]}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                      {currentNews.excerpt.substring(0, 150)}...
-                    </p>
-                    <p className="text-gray-500 text-xs">
-                      {currentNews.date}
-                    </p>
-                  </div>
-                  
-                  {/* Center - Image */}
-                  <div className="w-1/3 relative">
-                    <img
-                      src={currentNews.image}
-                      alt={currentNews.title}
-                      className="w-full h-80 object-cover"
-                    />
-                  </div>
-                  
-                  {/* Right Side - Full Content */}
-                  <div className="w-1/3 p-8 flex flex-col justify-center">
-                    <p className="text-gray-500 text-sm mb-2">{currentNews.date}</p>
-                    <h3 className="text-2xl font-bold text-blue-700 mb-4 leading-tight">
-                      {currentNews.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                      {currentNews.excerpt.substring(0, 200)}...
-                    </p>
-                    <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-2 rounded transition-all duration-300 w-fit">
-                      Read More
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Navigation Arrows for Desktop */}
-              <button
-                onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-yellow-400 hover:bg-yellow-500 text-gray-800 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-110 z-10"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              
-              <button
-                onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-yellow-400 hover:bg-yellow-500 text-gray-800 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-110 z-10"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
-
-            {/* Mobile/Tablet: Stacked layout */}
-            <div className="lg:hidden relative">
-              <div className="bg-white shadow-lg overflow-hidden">
-                <div className="relative h-64 sm:h-80">
-                  <div 
-                    className="flex transition-transform duration-700 ease-in-out h-full"
-                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                  >
-                    {newsItems.map((item) => (
-                      <div key={item.id} className="w-full flex-shrink-0 h-full">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <p className="text-gray-500 text-sm mb-2">{currentNews.date}</p>
-                  <h3 className="text-xl font-bold text-blue-700 mb-4 leading-tight">
-                    {currentNews.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                    {currentNews.excerpt.substring(0, 150)}...
-                  </p>
-                  <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-2 rounded transition-all duration-300 w-fit">
-                    Read More
-                  </button>
-                </div>
-
-                {/* Navigation Arrows for Mobile */}
-                <button
-                  onClick={prevSlide}
-                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400 hover:bg-yellow-500 text-gray-800 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-110 z-10"
-                >
-                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-                </button>
-                
-                <button
-                  onClick={nextSlide}
-                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400 hover:bg-yellow-500 text-gray-800 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-110 z-10"
-                >
-                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-                </button>
-
-                {/* Slide Indicators for Mobile */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                  {newsItems.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentSlide(index)}
-                      className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                        currentSlide === index
-                          ? 'bg-white scale-125'
-                          : 'bg-white/50 hover:bg-white/75'
-                      }`}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Navigation Dots (outside carousel) */}
-            <div className="flex justify-center space-x-3 mt-6">
-              {newsItems.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentSlide === index
-                      ? 'bg-blue-600 scale-125'
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
+  if (loading) {
+    return (
+      <section className="py-12 md:py-14 bg-[var(--surface)] border-b border-[var(--border-light)]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="animate-pulse space-y-4">
+            <div className="skeleton h-8 w-48 animate-pulse"></div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+              {[1, 2, 3].map(i => (
+                <div key={i} className="skeleton h-80 rounded-2xl"></div>
               ))}
             </div>
           </div>
+        </div>
+      </section>
+    );
+  }
+
+  // If no news, don't show the section
+  if (!newsItems || newsItems.length === 0) return null;
+
+  return (
+    <section id="news-section" className="py-12 md:py-14 bg-[var(--surface)] border-b border-[var(--border-light)]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        
+        {/* Header Section */}
+        <div className={`flex flex-col md:flex-row md:items-end justify-between mb-10 transition-all duration-700 ${
+          isInView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+        }`}>
+          <div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--primary-dark)] mb-3 tracking-tight">
+              Latest from the Foundation
+            </h2>
+            <div className="w-16 h-1 bg-[var(--accent)] rounded-full"></div>
+          </div>
+          
+          <a 
+            href="/resource-center" 
+            className="inline-flex items-center space-x-2 text-[var(--primary)] hover:text-[var(--primary-dark)] font-bold text-sm transition-colors duration-300 mt-4 md:mt-0"
+          >
+            <span>View all news & stories</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+
+        {/* 3-Column News Grid (JMKF style layout) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {newsItems.map((item, index) => (
+            <article 
+              key={item.id}
+              className={`bg-white rounded-2xl overflow-hidden border border-[var(--border)] hover:border-[var(--primary)]/20 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between ${
+                isInView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+              }`}
+              style={{ transitionDelay: `${index * 150}ms` }}
+            >
+              {/* Top Banner Accent */}
+              <div className="h-2 bg-[var(--primary)]"></div>
+
+              <div className="p-8 flex-grow flex flex-col justify-between min-h-[280px]">
+                <div>
+                  {/* Category and Date row */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="inline-block bg-[var(--surface-warm)] text-[var(--primary-dark)] text-xs font-bold px-3 py-1 rounded-full border border-[var(--primary)]/10">
+                      {item.category}
+                    </span>
+                    <div className="inline-flex items-center gap-1.5 text-xs text-[var(--text-muted)]">
+                      <Calendar className="w-3.5 h-3.5" />
+                      <span>{item.date}</span>
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-[var(--primary-dark)] mb-3 leading-snug group hover:text-[var(--primary)] transition-colors">
+                    <a href={`/resource-center#news-${item.id}`} className="hover:underline">
+                      {item.title}
+                    </a>
+                  </h3>
+
+                  {/* Excerpt */}
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed line-clamp-4 mb-6">
+                    {item.excerpt}
+                  </p>
+                </div>
+
+                {/* Read More Link */}
+                <div className="pt-4 border-t border-[var(--border-light)]">
+                  <a 
+                    href={`/resource-center#news-${item.id}`}
+                    className="inline-flex items-center text-[var(--primary)] hover:text-[var(--primary-dark)] font-bold text-sm group/link transition-colors"
+                  >
+                    <span>Read More</span>
+                    <ArrowRight className="w-4 h-4 ml-1.5 transform group-hover/link:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

@@ -1,64 +1,95 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Download } from 'lucide-react';
+import { ArrowRight, Heart, Users } from 'lucide-react';
 
 const SupportOurMission = () => {
-  const [isInView, setIsInView] = useState(false);
+  const [isInView, setIsInView] = useState(true);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-
-    const element = document.getElementById('support-mission-section');
-    if (element) observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
+  const partners = [
+    { name: "Ministry of Health Tanzania", type: "Government Partner" },
+    { name: "Kagera Regional Council", type: "Local Government" },
+    { name: "Biharamulo District Authority", type: "District Council" },
+    { name: "NEMC Tanzania", type: "Environmental Partner" },
+    { name: "Tanzania Commission for AIDS", type: "Health Partner" }
+  ];
 
   return (
-    <section 
-      id="support-mission-section" 
-      className="relative py-16 bg-cover bg-center bg-no-repeat min-h-[500px] flex items-center"
-      style={{
-        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
-      }}
-    >
-      <div className="container mx-auto px-6 max-w-4xl text-center">
-        <div className={`transition-all duration-1000 ${
-          isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}>
-          {/* Main Heading */}
-          <h2 className="text-5xl font-bold text-blue-800 mb-8 tracking-tight">
-            Support Our Mission
-          </h2>
+    <div>
+      <section 
+        id="support-mission-section" 
+        className="relative py-12 md:py-14 overflow-hidden border-b border-[var(--border-light)]"
+      >
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary-dark)] via-[var(--primary)] to-[var(--primary-light)]"></div>
+        
+        {/* Decorative circles */}
+        <div className="absolute top-10 right-10 w-64 h-64 bg-white/5 rounded-full animate-float"></div>
+        <div className="absolute bottom-10 left-10 w-40 h-40 bg-white/5 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/3 w-20 h-20 bg-[var(--accent)]/10 rounded-full animate-pulse-soft"></div>
+        
+        <div className="container mx-auto px-6 max-w-4xl text-center relative z-10">
+          <div className={`transition-all duration-700 ${
+            isInView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          }`}>
+            {/* Heading */}
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 tracking-tight">
+              Support Our Mission
+            </h2>
 
-          {/* Description Text */}
-          <div className="max-w-3xl mx-auto mb-10">
-            <p className="text-xl text-gray-800 leading-relaxed font-normal">
-              Join us in our vision for a healthy and sustainable future where every person has access 
-              to healthcare and lives in harmony with nature. Your contribution will support our work in 
-              <strong className="text-gray-900"> transforming lives across Tanzania</strong> through healthcare, 
-              environmental conservation, and community empowerment.
-            </p>
-          </div>
+            {/* Description */}
+            <div className="max-w-3xl mx-auto mb-10">
+              <p className="text-lg text-white/90 leading-relaxed">
+                Join us in our vision for a healthy and sustainable future where every person has access 
+                to healthcare and lives in harmony with nature. Your contribution supports our work  
+                <strong className="text-[var(--accent-light)]"> transforming lives across Tanzania</strong> through healthcare, 
+                environmental conservation, and community empowerment.
+              </p>
+            </div>
 
-          {/* Call to Action Button */}
-          <div className={`transition-all duration-1000 ${
-            isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`} style={{ transitionDelay: '300ms' }}>
-            <button className="inline-flex items-center space-x-2 bg-blue-700 hover:bg-blue-800 text-white font-semibold px-10 py-4 rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg">
-              <span className="text-lg">Get Involved</span>
-              <Download className="w-5 h-5" />
-            </button>
+            {/* CTAs */}
+            <div className="flex flex-wrap justify-center gap-4">
+              <a 
+                href="/contact"
+                className="inline-flex items-center space-x-2 bg-[var(--accent)] hover:bg-[var(--accent-light)] text-[var(--primary-dark)] font-bold px-8 py-3.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+              >
+                <Heart className="w-5 h-5" />
+                <span>Donate Now</span>
+              </a>
+              <a 
+                href="/contact"
+                className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-lg transition-all duration-300 border border-white/30"
+              >
+                <Users className="w-5 h-5" />
+                <span>Volunteer</span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Partners section like JMKF */}
+      <section className="py-12 bg-white border-b border-[var(--border-light)]">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-8">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">Our Partners & Supporters</h3>
+            <div className="w-10 h-0.5 bg-[var(--accent)] mx-auto mt-2"></div>
+          </div>
+          
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            {partners.map((partner, index) => (
+              <div 
+                key={index}
+                className="flex flex-col items-center justify-center p-4 border border-[var(--border-light)] rounded-xl bg-[var(--surface)] hover:bg-white transition-all duration-300 hover:shadow-sm"
+              >
+                <span className="text-sm font-bold text-[var(--primary-dark)] tracking-tight text-center">{partner.name}</span>
+                <span className="text-[10px] uppercase font-bold text-[var(--primary-light)] tracking-wider mt-1">{partner.type}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 

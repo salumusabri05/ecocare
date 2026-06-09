@@ -1,99 +1,104 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { Heart, Leaf, Users, ArrowRight } from 'lucide-react';
 
 const KeyFocusAreas = () => {
-  const [isInView, setIsInView] = useState(false);
+  const [isInView, setIsInView] = useState(true);
 
   const focusAreas = [
     {
       id: 1,
-      title: "Healthcare Initiatives",
-      description: "We provide free or affordable healthcare to underserved communities, promote mental health awareness, and run education programs on nutrition, hygiene, and disease prevention.",
-      image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      buttonColor: "bg-yellow-400 hover:bg-yellow-500",
-      titleColor: "text-gray-900"
+      title: "Health Programs",
+      description: "Providing public health outreach, maternal and child wellness initiatives, disease prevention awareness, and blood donation campaigns to reduce local health disparities.",
+      icon: Heart,
+      image: "/approach/ecocare.jpg",
+      color: "bg-[var(--primary)]",
+      href: "/programs#healthcare"
     },
     {
       id: 2,
       title: "Environmental Projects",
-      description: "Our environmental work includes tree planting and reforestation, waste management and clean-up campaigns, and innovative solutions like the Helmet Cleaning Vendor Machine.",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      buttonColor: "bg-blue-600 hover:bg-blue-700",
-      titleColor: "text-blue-600"
+      description: "Restoring local ecosystems through tree planting, plastic waste clean-up campaigns, and promoting sustainable farming practices in kagera region.",
+      icon: Leaf,
+      image: "/eco.jpeg",
+      color: "bg-[var(--primary-light)]",
+      href: "/programs#environmental"
     },
     {
       id: 3,
-      title: "Community Campaigns",
-      description: "We run the \"Give Life\" Blood Donation Campaign ensuring hospitals have enough blood supplies, and lead youth and women empowerment initiatives across communities.",
-      image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      buttonColor: "bg-blue-600 hover:bg-blue-700",
-      titleColor: "text-blue-600"
+      title: "Community Outreach",
+      description: "Empowering youths and women, leading advocacy networks, building resilience capacity, and promoting social innovation across Biharamulo.",
+      icon: Users,
+      image: "/approach/ecocare1.jpg",
+      color: "bg-[var(--primary-dark)]",
+      href: "/programs#community"
     }
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-
-    const element = document.getElementById('focus-areas-section');
-    if (element) observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="focus-areas-section" className="py-16 bg-gray-100">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <section id="focus-areas-section" className="py-12 md:py-14 bg-[var(--surface-warm)] border-b border-[var(--border-light)]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        
         {/* Header */}
-        <div className={`mb-12 transition-all duration-1000 ${
-          isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        <div className={`text-center mb-10 transition-all duration-700 ${
+          isInView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
         }`}>
-          <h2 className="text-5xl font-bold text-blue-700 mb-2">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--primary-dark)] mb-4 tracking-tight">
             Key Focus Areas
           </h2>
-          <div className="w-48 h-1 bg-red-500 mb-8"></div>
+          <div className="w-16 h-1 bg-[var(--accent)] mx-auto mb-6 rounded-full"></div>
+          <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
+            Connecting human health and environmental preservation to secure a resilient, thriving future for all.
+          </p>
         </div>
 
         {/* Focus Areas Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {focusAreas.map((area, index) => (
-            <div 
-              key={area.id} 
-              className={`transition-all duration-1000 ${
-                isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-              }`}
-              style={{ transitionDelay: `${index * 200}ms` }}
-            >
-              {/* Image */}
-              <div className="mb-6">
-                <img
-                  src={area.image}
-                  alt={area.title}
-                  className="w-full h-64 object-cover rounded-lg"
-                />
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {focusAreas.map((area, index) => {
+            const IconComponent = area.icon;
+            return (
+              <div 
+                key={area.id} 
+                className={`group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-[var(--border)] ${
+                  isInView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
+                {/* Image */}
+                <div className="relative h-60 overflow-hidden bg-[var(--surface)]">
+                  <img
+                    src={area.image}
+                    alt={area.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)]/50 to-transparent"></div>
+                  <div className={`absolute top-4 left-4 ${area.color} w-12 h-12 rounded-xl flex items-center justify-center shadow-lg border border-white/20`}>
+                    <IconComponent className="w-6 h-6 text-white" />
+                  </div>
+                </div>
 
-              {/* Content */}
-              <div className="text-center">
-                <h3 className={`text-3xl font-bold mb-6 ${area.titleColor}`}>
-                  {area.title}
-                </h3>
-                
-                <p className="text-gray-600 text-lg leading-relaxed mb-8 px-2">
-                  {area.description}
-                </p>
+                {/* Content */}
+                <div className="p-8">
+                  <h3 className="text-xl font-bold text-[var(--primary-dark)] mb-3 group-hover:text-[var(--primary)] transition-colors">
+                    {area.title}
+                  </h3>
+                  
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
+                    {area.description}
+                  </p>
 
-                <button className={`${area.buttonColor} text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105`}>
-                  LEARN MORE
-                </button>
+                  <a 
+                    href={area.href}
+                    className="inline-flex items-center text-[var(--primary)] hover:text-[var(--primary-dark)] font-bold text-sm group/link transition-colors"
+                  >
+                    <span className="border-b-2 border-transparent group-hover/link:border-[var(--primary)] pb-0.5 transition-all">Learn More</span>
+                    <ArrowRight className="w-4 h-4 ml-1.5 transform group-hover/link:translate-x-1 transition-transform" />
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

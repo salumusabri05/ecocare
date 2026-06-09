@@ -1,202 +1,150 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Heart, Leaf, Users, Shield, ArrowRight } from 'lucide-react';
 
 const OurApproach = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isInView, setIsInView] = useState(false);
+  const [isInView, setIsInView] = useState(true);
 
-  // Mock data for approach images
   const approaches = [
     {
       id: 1,
       image: "/approach/ecocare.jpg",
-      alt: "Healthcare worker examining a child"
+      alt: "SmartCare Africa Foundation community health outreach in Biharamulo"
     },
     {
       id: 2,
       image: "/approach/ecocare1.jpg", 
-      alt: "Community education and outreach program"
+      alt: "Environmental conservation program in Kagera Region"
     },
     {
       id: 3,
-      image: "/approach/ecocare.jpg",
-      alt: "Sustainable agriculture and farming practices"
-    },
-    {
-      id: 4,
-      image: "/approach/ecocare1.jpg",
-      alt: "Blood donation campaign in Biharamulo District"
+      image: "/eco.jpeg",
+      alt: "Community engagement and education initiative"
     }
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-
-    const element = document.getElementById('approach-section');
-    if (element) observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
+  const values = [
+    { icon: Heart, title: "Compassion", desc: "Serving with care, empathy, and deep respect for humanity." },
+    { icon: Shield, title: "Integrity", desc: "Transparent, accountable, and honest in all our operations." },
+    { icon: Leaf, title: "Sustainability", desc: "Protecting the ecosystem and health of future generations." },
+    { icon: Users, title: "Collaboration", desc: "Partnering with stakeholders for collective community action." }
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % approaches.length);
     }, 5000);
-
     return () => clearInterval(timer);
   }, [approaches.length]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % approaches.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => 
-      prev === 0 ? approaches.length - 1 : prev - 1
-    );
-  };
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % approaches.length);
+  const prevSlide = () => setCurrentSlide((prev) => prev === 0 ? approaches.length - 1 : prev - 1);
 
   return (
-    <section id="approach-section" className="py-16 bg-white">
-      <div className="container mx-auto px-4 max-w-7xl">
-        {/* Header */}
-        <div className={`mb-12 transition-all duration-1000 ${
-          isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+    <section id="approach-section" className="py-12 md:py-14 bg-white border-b border-[var(--border-light)]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        
+        {/* Intro Block like JMKF */}
+        <div className={`mb-10 max-w-5xl transition-all duration-700 ${
+          isInView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
         }`}>
-          <h2 className="text-5xl font-bold text-blue-700 mb-2">
-            Our Approach
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--primary-dark)] leading-tight mb-6 tracking-tight">
+            We partner with communities and stakeholders to drive sustainable change and improve the quality of lives in Tanzania.
           </h2>
-          <div className="w-48 h-1 bg-red-500 mb-8"></div>
+          <div className="w-16 h-1 bg-[var(--accent)] mb-8 rounded-full"></div>
           
-          <p className="text-lg text-gray-600 leading-relaxed max-w-5xl">
-            Our mission is to provide healthcare services, promote health education, champion environmental conservation, 
-            and empower communities through sustainable initiatives—driven by our core values of compassion, integrity, 
-            sustainability, collaboration, and innovation.
+          <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-3xl">
+            SmartCare Africa Foundation works at the intersection of human health and environmental 
+            conservation. Driven by research, innovation, and collaboration, we implement programs 
+            that empower local communities and promote ecological resilience.
           </p>
         </div>
 
-        {/* Image Carousel Container */}
-        <div className="relative">
-          <div className={`relative transition-all duration-1000 ${
-            isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            {/* Desktop: Side by side images */}
-            <div className="hidden lg:block relative">
-              <div className="flex gap-4 h-96">
-                {/* Left Image */}
-                <div className="w-1/2 relative overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                    alt="Team meeting and collaboration"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                {/* Right Image */}
-                <div className="w-1/2 relative overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                    alt="Community environmental cleanup"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+        {/* Two Column Layout: Slide Show & Values Card Grid */}
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          {/* Image Slider — 7 Columns */}
+          <div className={`lg:col-span-7 relative transition-all duration-700 ${
+            isInView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          }`} style={{ transitionDelay: '200ms' }}>
+            <div className="relative h-80 sm:h-[400px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg border border-[var(--border-light)]">
+              <div 
+                className="flex transition-transform duration-700 ease-in-out h-full"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {approaches.map((item) => (
+                  <div key={item.id} className="w-full flex-shrink-0 h-full relative">
+                    <img
+                      src={item.image}
+                      alt={item.alt}
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Shadow overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)]/40 to-transparent"></div>
+                  </div>
+                ))}
               </div>
 
-              {/* Navigation Arrows for Desktop */}
+              {/* Navigation Arrows */}
               <button
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-yellow-400 hover:bg-yellow-500 text-gray-800 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-110 z-10"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/95 hover:bg-white text-[var(--primary-dark)] rounded-full flex items-center justify-center shadow-md transition-all duration-300 hover:scale-105 z-10"
               >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft className="w-5 h-5" />
               </button>
-              
               <button
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-yellow-400 hover:bg-yellow-500 text-gray-800 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-110 z-10"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/95 hover:bg-white text-[var(--primary-dark)] rounded-full flex items-center justify-center shadow-md transition-all duration-300 hover:scale-105 z-10"
               >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
-
-            {/* Mobile/Tablet: Single image carousel */}
-            <div className="lg:hidden relative">
-              <div className="relative h-64 sm:h-80 md:h-96 overflow-hidden">
-                <div 
-                  className="flex transition-transform duration-700 ease-in-out h-full"
-                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                >
-                  {[
-                    "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-                    "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                  ].map((src, index) => (
-                    <div key={index} className="w-full flex-shrink-0 h-full">
-                      <img
-                        src={src}
-                        alt={approaches[index]?.alt}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Navigation Arrows for Mobile */}
-              <button
-                onClick={prevSlide}
-                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400 hover:bg-yellow-500 text-gray-800 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-110 z-10"
-              >
-                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-              </button>
-              
-              <button
-                onClick={nextSlide}
-                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400 hover:bg-yellow-500 text-gray-800 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 transform hover:scale-110 z-10"
-              >
-                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+                <ChevronRight className="w-5 h-5" />
               </button>
 
-              {/* Slide Indicators for Mobile */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              {/* Indicators */}
+              <div className="absolute bottom-6 left-6 flex space-x-2.5 z-10">
                 {approaches.map((_, index) => (
                   <button
                     key={index}
-                    onClick={() => goToSlide(index)}
-                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                      currentSlide === index
-                        ? 'bg-white scale-125'
-                        : 'bg-white/50 hover:bg-white/75'
+                    onClick={() => setCurrentSlide(index)}
+                    className={`h-2.5 rounded-full transition-all duration-300 ${
+                      currentSlide === index ? 'w-8 bg-[var(--accent)]' : 'w-2.5 bg-white/60 hover:bg-white'
                     }`}
                   />
                 ))}
               </div>
             </div>
+          </div>
 
-            {/* Navigation Dots (outside carousel) */}
-            <div className="flex justify-center space-x-3 mt-6">
-              {approaches.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentSlide === index
-                      ? 'bg-blue-600 scale-125'
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
+          {/* Values Grid — 5 Columns */}
+          <div className={`lg:col-span-5 space-y-6 transition-all duration-700 ${
+            isInView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          }`} style={{ transitionDelay: '400ms' }}>
+            <h3 className="text-xl font-bold text-[var(--primary-dark)] mb-2">Our Core Values</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {values.map((value, index) => {
+                const IconComponent = value.icon;
+                return (
+                  <div 
+                    key={index} 
+                    className="bg-[var(--surface)] hover:bg-white rounded-xl p-5 border border-[var(--border-light)] hover:border-[var(--primary)]/20 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
+                  >
+                    <div className="w-10 h-10 bg-[var(--primary)]/10 rounded-lg flex items-center justify-center mb-3">
+                      <IconComponent className="w-5 h-5 text-[var(--primary)]" />
+                    </div>
+                    <h4 className="text-base font-bold text-[var(--primary-dark)] mb-1">{value.title}</h4>
+                    <p className="text-xs text-[var(--text-secondary)] leading-relaxed">{value.desc}</p>
+                  </div>
+                );
+              })}
             </div>
+
+            <a 
+              href="/who-we-are" 
+              className="inline-flex items-center space-x-2 text-[var(--primary)] hover:text-[var(--primary-dark)] font-bold text-sm transition-colors duration-300 mt-2"
+            >
+              <span>Learn more about our mission</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </div>

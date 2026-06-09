@@ -1,26 +1,27 @@
-import { Andika } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-
-const andika = Andika({
-  subsets: ["latin", "latin-ext", "cyrillic", "cyrillic-ext", "vietnamese"],
-  variable: "--font-andika",
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
   display: "swap",
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata = {
-  title: "SmartCare Africa Foundation | Connecting Health and Environment",
-  description: "A registered NGO in Tanzania (Reg. No. 00NGO/R/8467) dedicated to providing healthcare services, promoting health education, championing environmental conservation, and empowering communities through sustainable initiatives.",
+  title: "SmartCare Africa Foundation | Sustaining Life & Nature",
+  description: "A registered Tanzanian NGO (Reg. No. 00NGO/R/8467) connecting human health and environmental sustainability to empower communities in Biharamulo, Kagera Region, and across Tanzania.",
+  icons: {
+    icon: "/logo/logo.jpg",
+    shortcut: "/logo/logo.jpg",
+    apple: "/logo/logo.jpg",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${andika.variable} antialiased`}
-      >
+    <html lang="en" className={`${inter.variable}`} suppressHydrationWarning>
+      <body className="antialiased" suppressHydrationWarning>
         {children}
       </body>
     </html>

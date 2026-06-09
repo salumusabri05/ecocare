@@ -1,23 +1,38 @@
 @import "tailwindcss";
 
+/* ===== SmartCare Africa Foundation — Design System (JMKF Theme) ===== */
+
 :root {
+  /* Brand Colors — Jakaya Mrisho Kikwete Foundation inspired theme */
+  --primary: #0F5132;        /* Elegant Deep Forest Green */
+  --primary-light: #198754;  /* Medium green */
+  --primary-dark: #093420;   /* Very deep green */
+  --primary-darker: #052214;
+  --accent: #EAB308;         /* Warm Tanzanian Gold */
+  --accent-light: #FDE047;
+  --accent-dark: #CA8A04;
+
+  /* Surfaces */
   --background: #ffffff;
-  --foreground: #171717;
-  --font-family: 'Andika', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --foreground: #1E293B;     /* Slate-800 for high quality reading */
+  --surface: #F8FAFC;        /* Very light slate */
+  --surface-warm: #F4FBF7;   /* Very soft warm light green */
+  --border: #E2E8F0;
+  --border-light: #F1F5F9;
+
+  /* Text */
+  --text-primary: #0F172A;   /* Slate-900 */
+  --text-secondary: #334155; /* Slate-700 */
+  --text-muted: #64748B;     /* Slate-500 */
+
+  /* Font */
+  --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* Tailwind theme variables */
 :root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-andika);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
@@ -26,124 +41,111 @@ body {
   font-family: var(--font-family);
   font-feature-settings: "kern", "liga", "clig", "calt";
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Font styles */
-.font-regular {
-  font-weight: 400;
-  font-style: normal;
+.font-regular { font-weight: 400; font-style: normal; }
+.font-bold { font-weight: 700; font-style: normal; }
+.font-italic { font-style: italic; }
+.font-bold-italic { font-weight: 700; font-style: italic; }
+
+/* ===== Smooth Scroll ===== */
+html { scroll-behavior: smooth; }
+
+/* ===== Selection Color ===== */
+::selection {
+  background: rgba(15, 81, 50, 0.15);
+  color: var(--primary-dark);
 }
 
-.font-bold {
-  font-weight: 700;
-  font-style: normal;
-}
-
-.font-italic {
-  font-style: italic;
-}
-
-.font-bold-italic {
-  font-weight: 700;
-  font-style: italic;
-}
-
-/* Global animations */
+/* ===== Global Animations ===== */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-24px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
 
 @keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @keyframes spin-reverse {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
 }
 
-.animate-fadeInUp {
-  animation: fadeInUp 1s ease-out forwards;
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
-.animate-fadeInLeft {
-  animation: fadeInLeft 1s ease-out forwards;
+/* ===== Animation Utility Classes ===== */
+.animate-fadeInUp { animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fadeInDown { animation: fadeInDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fadeInLeft { animation: fadeInLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fadeInRight { animation: fadeInRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fadeIn { animation: fadeIn 0.6s ease-out forwards; }
+.animate-scaleIn { animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
+.animate-spin-reverse { animation: spin-reverse 15s linear infinite; }
+
+/* ===== Scroll to Top Button ===== */
+.scroll-top-button {
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+.scroll-top-button.visible { opacity: 1; visibility: visible; }
+.scroll-top-button:hover { transform: translateY(-2px); }
+
+/* ===== Loading Skeleton ===== */
+.skeleton {
+  background: linear-gradient(90deg, var(--border-light) 25%, #e8eef0 50%, var(--border-light) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
 }
 
-.animate-fadeInRight {
-  animation: fadeInRight 1s ease-out forwards;
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
-}
-
-.animate-spin-reverse {
-  animation: spin-reverse 15s linear infinite;
-}
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary-light); }
