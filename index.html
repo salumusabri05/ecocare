@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartCare Africa Foundation | Sustaining Life & Nature</title>
+  <meta name="description" content="A registered Tanzanian NGO connecting human health and environmental sustainability to empower communities in Biharamulo, Kagera Region, and across Tanzania.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation (Identical across all pages) -->
+  <nav class="navbar navbar-expand-lg sticky-top sca-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="https://placehold.co/48x48/f3ead9/16352a?text=SCA" alt="SmartCare Africa Logo" width="40" height="40" class="rounded-circle">
+        <span>SmartCare Africa</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-2">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="who-we-are.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Who We Are
+            </a>
+            <ul class="dropdown-menu border-0 shadow">
+              <li><a class="dropdown-item" href="who-we-are.html">About Us</a></li>
+              <li><a class="dropdown-item" href="who-we-are.html#vision-mission">Vision & Mission</a></li>
+              <li><a class="dropdown-item" href="who-we-are.html#core-values">Core Values</a></li>
+              <li><a class="dropdown-item" href="who-we-are.html#team">Our Team</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="programs.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Our Programs
+            </a>
+            <ul class="dropdown-menu border-0 shadow">
+              <li><a class="dropdown-item" href="programs.html#healthcare">Healthcare Initiatives</a></li>
+              <li><a class="dropdown-item" href="programs.html#environmental">Environmental Projects</a></li>
+              <li><a class="dropdown-item" href="programs.html#community">Community Campaigns</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="resource-center.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Resource Center
+            </a>
+            <ul class="dropdown-menu border-0 shadow">
+              <li><a class="dropdown-item" href="resource-center.html#publications">Publications</a></li>
+              <li><a class="dropdown-item" href="resource-center.html#news">News & Updates</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-accent-custom text-white fw-bold px-4" href="contact.html">Get Involved</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="position-relative d-flex align-items-center overflow-hidden" style="min-height: 90vh;">
+      <div class="position-absolute w-100 h-100 start-0 top-0">
+        <img src="https://placehold.co/1920x1080/16352a/f3ead9?text=Hero+Image" alt="SmartCare Africa Foundation community outreach" class="w-100 h-100 object-fit-cover" loading="eager">
+        <div class="position-absolute w-100 h-100 start-0 top-0" style="background: linear-gradient(to right, rgba(14, 36, 28, 0.95), rgba(22, 53, 42, 0.8), rgba(22, 53, 42, 0.4));"></div>
+      </div>
+
+      <div class="container position-relative z-1 py-5">
+        <div class="max-w-3xl" style="max-width: 800px;">
+          <h1 class="display-3 fw-bold text-white mb-2 fade-in-up">EMPOWERING</h1>
+          <h1 class="display-3 fw-bold text-clay mb-4 fade-in-up delay-100">COMMUNITIES</h1>
+
+          <div class="fs-4 fw-bold mb-4 fade-in-up delay-200 text-clay">
+            SUSTAINING LIFE AND NATURE
+          </div>
+
+          <p class="fs-5 text-white opacity-75 mb-5 fade-in-up delay-300">
+            A registered NGO in Tanzania connecting human health and environmental
+            sustainability to improve community well-being in Biharamulo District,
+            Kagera Region, and beyond.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 fade-in-up delay-300">
+            <a href="who-we-are.html" class="btn bg-white text-forest-deep fw-bold px-4 py-3 shadow">
+              Our Impact
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right ms-2" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+            </a>
+            <a href="contact.html" class="btn btn-primary-custom px-4 py-3 shadow d-flex align-items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/></svg>
+              Donate
+            </a>
+            <a href="programs.html" class="btn btn-accent-custom text-white px-4 py-3 shadow">
+              Volunteer
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom gradient fade -->
+      <div class="position-absolute bottom-0 start-0 w-100" style="height: 4rem; background: linear-gradient(to top, white, transparent); pointer-events: none;"></div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section class="section border-bottom border-light">
+      <div class="container">
+
+        <!-- Intro Block -->
+        <div class="mb-5 fade-in-up" style="max-width: 900px;">
+          <h2 class="display-font fw-bold text-forest mb-4" style="font-size: clamp(2rem, 4vw, 3rem);">
+            We partner with communities and stakeholders to drive sustainable change and improve the quality of lives in Tanzania.
+          </h2>
+          <div class="rule-accent"></div>
+          <p class="fs-5 text-muted-custom">
+            SmartCare Africa Foundation works at the intersection of human health and environmental
+            conservation. Driven by research, innovation, and collaboration, we implement programs
+            that empower local communities and promote ecological resilience.
+          </p>
+        </div>
+
+        <div class="row g-5 align-items-center">
+          <!-- Image Slider Placeholder (Bootstrap Carousel) -->
+          <div class="col-lg-7 fade-in-up delay-100">
+            <div id="approachCarousel" class="carousel slide rounded-4 overflow-hidden shadow-sm border border-light" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#approachCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#approachCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#approachCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner" style="height: 400px;">
+                <div class="carousel-item active h-100">
+                  <img src="https://placehold.co/800x600/16352a/f3ead9?text=Community+Health+Outreach" class="d-block w-100 h-100 object-fit-cover" alt="Community health outreach">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="https://placehold.co/800x600/16352a/f3ead9?text=Environmental+Conservation" class="d-block w-100 h-100 object-fit-cover" alt="Environmental conservation">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="https://placehold.co/800x600/16352a/f3ead9?text=Community+Engagement" class="d-block w-100 h-100 object-fit-cover" alt="Community engagement">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#approachCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-forest rounded-circle p-3" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#approachCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-forest rounded-circle p-3" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Values Grid -->
+          <div class="col-lg-5 fade-in-up delay-200">
+            <h3 class="display-font fw-bold text-forest mb-4">Our Core Values</h3>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <div class="p-3 bg-sand rounded-3 border h-100" style="border-color: rgba(0,0,0,0.05) !important;">
+                  <div class="d-inline-flex align-items-center justify-content-center bg-white text-forest rounded p-2 mb-3 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16"><path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/></svg>
+                  </div>
+                  <h4 class="h6 fw-bold text-forest">Compassion</h4>
+                  <p class="small text-muted-custom mb-0">Serving with care, empathy, and deep respect for humanity.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-sand rounded-3 border h-100" style="border-color: rgba(0,0,0,0.05) !important;">
+                  <div class="d-inline-flex align-items-center justify-content-center bg-white text-forest rounded p-2 mb-3 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-shield-check" viewBox="0 0 16 16"><path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/><path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/></svg>
+                  </div>
+                  <h4 class="h6 fw-bold text-forest">Integrity</h4>
+                  <p class="small text-muted-custom mb-0">Transparent, accountable, and honest in all our operations.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-sand rounded-3 border h-100" style="border-color: rgba(0,0,0,0.05) !important;">
+                  <div class="d-inline-flex align-items-center justify-content-center bg-white text-forest rounded p-2 mb-3 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-tree" viewBox="0 0 16 16"><path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.739A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.761L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A1.5 1.5 0 0 0 5 5.5h-.721L6.39 2.333 8 0l1.61 2.333 2.111 3.167H11a1.5 1.5 0 0 0-1.437-.742H6.437z"/></svg>
+                  </div>
+                  <h4 class="h6 fw-bold text-forest">Sustainability</h4>
+                  <p class="small text-muted-custom mb-0">Protecting the ecosystem and health of future generations.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-sand rounded-3 border h-100" style="border-color: rgba(0,0,0,0.05) !important;">
+                  <div class="d-inline-flex align-items-center justify-content-center bg-white text-forest rounded p-2 mb-3 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16"><path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>
+                  </div>
+                  <h4 class="h6 fw-bold text-forest">Collaboration</h4>
+                  <p class="small text-muted-custom mb-0">Partnering with stakeholders for collective community action.</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="who-we-are.html" class="link-custom d-inline-flex align-items-center mt-4">
+              <span>Learn more about our mission</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right ms-2" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section class="bg-sand py-5 border-bottom border-light">
+      <div class="container py-4">
+
+        <!-- Header -->
+        <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-5 fade-in-up">
+          <div>
+            <h2 class="display-font fw-bold text-forest mb-3 display-6">Latest from the Foundation</h2>
+            <div class="rule-accent mb-0"></div>
+          </div>
+          <a href="resource-center.html" class="link-custom fw-bold d-inline-flex align-items-center mt-4 mt-md-0">
+            <span>View all news & stories</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right ms-2" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+          </a>
+        </div>
+
+        <!-- 3-Column News Grid -->
+        <div class="row g-4">
+          <!-- News Item 1 -->
+          <div class="col-md-4 fade-in-up delay-100">
+            <article class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden focus-item">
+              <div class="bg-forest" style="height: 6px;"></div>
+              <div class="card-body d-flex flex-column p-4">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <span class="badge bg-forest bg-opacity-10 text-forest border border-forest border-opacity-25 rounded-pill px-3 py-2">Healthcare</span>
+                  <div class="text-muted-custom small d-flex align-items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>
+                    <span>June 08, 2026</span>
+                  </div>
+                </div>
+                <h3 class="h5 fw-bold text-forest mb-3">
+                  <a href="resource-center.html#news-1" class="text-decoration-none text-forest">Empowering Biharamulo Communities through Health Education Outreach</a>
+                </h3>
+                <p class="text-muted-custom small mb-4 flex-grow-1" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
+                  Our recent outreach program in Kagera Region engaged over 500 residents on preventative health, hygiene practices, and disease control guidelines.
+                </p>
+                <div class="pt-3 border-top border-light">
+                  <a href="resource-center.html#news-1" class="link-custom fw-bold small d-inline-flex align-items-center">
+                    <span>Read More</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right ms-1" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- News Item 2 -->
+          <div class="col-md-4 fade-in-up delay-200">
+            <article class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden focus-item">
+              <div class="bg-forest" style="height: 6px;"></div>
+              <div class="card-body d-flex flex-column p-4">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <span class="badge bg-forest bg-opacity-10 text-forest border border-forest border-opacity-25 rounded-pill px-3 py-2">Environment</span>
+                  <div class="text-muted-custom small d-flex align-items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>
+                    <span>June 02, 2026</span>
+                  </div>
+                </div>
+                <h3 class="h5 fw-bold text-forest mb-3">
+                  <a href="resource-center.html#news-2" class="text-decoration-none text-forest">Reforestation Drive Restores 5 Hectares of Degraded Forest Land</a>
+                </h3>
+                <p class="text-muted-custom small mb-4 flex-grow-1" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
+                  In collaboration with local schools, our team planted 2,500 native trees to restore key water catchment areas and promote ecological resilience.
+                </p>
+                <div class="pt-3 border-top border-light">
+                  <a href="resource-center.html#news-2" class="link-custom fw-bold small d-inline-flex align-items-center">
+                    <span>Read More</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right ms-1" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- News Item 3 -->
+          <div class="col-md-4 fade-in-up delay-300">
+            <article class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden focus-item">
+              <div class="bg-forest" style="height: 6px;"></div>
+              <div class="card-body d-flex flex-column p-4">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <span class="badge bg-forest bg-opacity-10 text-forest border border-forest border-opacity-25 rounded-pill px-3 py-2">Campaign</span>
+                  <div class="text-muted-custom small d-flex align-items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>
+                    <span>May 24, 2026</span>
+                  </div>
+                </div>
+                <h3 class="h5 fw-bold text-forest mb-3">
+                  <a href="resource-center.html#news-3" class="text-decoration-none text-forest">SmartCare Launches "Give Life" Blood Donation Mobilization Campaign</a>
+                </h3>
+                <p class="text-muted-custom small mb-4 flex-grow-1" style="display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
+                  Faced with local blood supply shortages, our team successfully mobilized youth volunteers to support emergency health reserves in Tanzanian hospitals.
+                </p>
+                <div class="pt-3 border-top border-light">
+                  <a href="resource-center.html#news-3" class="link-custom fw-bold small d-inline-flex align-items-center">
+                    <span>Read More</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right ms-1" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Focus Areas Section -->
+    <section class="section border-bottom border-light bg-light" style="background-color: var(--sand) !important;">
+      <div class="container">
+
+        <!-- Header -->
+        <div class="text-center mb-5 fade-in-up">
+          <h2 class="display-font fw-bold text-forest mb-4 display-6">Key Focus Areas</h2>
+          <div class="rule-accent mx-auto mb-4"></div>
+          <p class="fs-5 text-muted-custom mx-auto" style="max-width: 700px;">
+            Connecting human health and environmental preservation to secure a resilient, thriving future for all.
+          </p>
+        </div>
+
+        <!-- Focus Areas Grid -->
+        <div class="row g-4">
+          <!-- Focus Area 1 -->
+          <div class="col-md-4 fade-in-up delay-100">
+            <div class="card h-100 border-light rounded-4 overflow-hidden shadow-sm focus-item">
+              <div class="position-relative focus-item-img-container bg-white">
+                <img src="https://placehold.co/600x400/16352a/f3ead9?text=Health+Programs" alt="Health Programs" class="w-100 h-100 object-fit-cover">
+                <div class="position-absolute w-100 h-100 start-0 top-0" style="background: linear-gradient(to top, rgba(14, 36, 28, 0.5), transparent);"></div>
+                <div class="position-absolute top-0 start-0 m-3 bg-forest rounded-3 d-flex align-items-center justify-content-center shadow" style="width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.2);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-heart text-white" viewBox="0 0 16 16"><path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/></svg>
+                </div>
+              </div>
+              <div class="card-body focus-item-content p-4 d-flex flex-column">
+                <h3 class="h5 fw-bold text-forest mb-3">Health Programs</h3>
+                <p class="text-muted-custom small mb-4 flex-grow-1">
+                  Providing public health outreach, maternal and child wellness initiatives, disease prevention awareness, and blood donation campaigns to reduce local health disparities.
+                </p>
+                <a href="programs.html#healthcare" class="link-custom fw-bold small d-inline-flex align-items-center mt-auto">
+                  <span>Learn More</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right ms-1" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Focus Area 2 -->
+          <div class="col-md-4 fade-in-up delay-200">
+            <div class="card h-100 border-light rounded-4 overflow-hidden shadow-sm focus-item">
+              <div class="position-relative focus-item-img-container bg-white">
+                <img src="https://placehold.co/600x400/16352a/f3ead9?text=Environmental+Projects" alt="Environmental Projects" class="w-100 h-100 object-fit-cover">
+                <div class="position-absolute w-100 h-100 start-0 top-0" style="background: linear-gradient(to top, rgba(14, 36, 28, 0.5), transparent);"></div>
+                <div class="position-absolute top-0 start-0 m-3 bg-forest rounded-3 d-flex align-items-center justify-content-center shadow" style="background-color: #198754 !important; width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.2);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-tree text-white" viewBox="0 0 16 16"><path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.739A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.761L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A1.5 1.5 0 0 0 5 5.5h-.721L6.39 2.333 8 0l1.61 2.333 2.111 3.167H11a1.5 1.5 0 0 0-1.437-.742H6.437z"/></svg>
+                </div>
+              </div>
+              <div class="card-body focus-item-content p-4 d-flex flex-column">
+                <h3 class="h5 fw-bold text-forest mb-3">Environmental Projects</h3>
+                <p class="text-muted-custom small mb-4 flex-grow-1">
+                  Restoring local ecosystems through tree planting, plastic waste clean-up campaigns, and promoting sustainable farming practices in kagera region.
+                </p>
+                <a href="programs.html#environmental" class="link-custom fw-bold small d-inline-flex align-items-center mt-auto">
+                  <span>Learn More</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right ms-1" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Focus Area 3 -->
+          <div class="col-md-4 fade-in-up delay-300">
+            <div class="card h-100 border-light rounded-4 overflow-hidden shadow-sm focus-item">
+              <div class="position-relative focus-item-img-container bg-white">
+                <img src="https://placehold.co/600x400/16352a/f3ead9?text=Community+Outreach" alt="Community Outreach" class="w-100 h-100 object-fit-cover">
+                <div class="position-absolute w-100 h-100 start-0 top-0" style="background: linear-gradient(to top, rgba(14, 36, 28, 0.5), transparent);"></div>
+                <div class="position-absolute top-0 start-0 m-3 bg-forest rounded-3 d-flex align-items-center justify-content-center shadow" style="background-color: #093420 !important; width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.2);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-people text-white" viewBox="0 0 16 16"><path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>
+                </div>
+              </div>
+              <div class="card-body focus-item-content p-4 d-flex flex-column">
+                <h3 class="h5 fw-bold text-forest mb-3">Community Outreach</h3>
+                <p class="text-muted-custom small mb-4 flex-grow-1">
+                  Empowering youths and women, leading advocacy networks, building resilience capacity, and promoting social innovation across Biharamulo.
+                </p>
+                <a href="programs.html#community" class="link-custom fw-bold small d-inline-flex align-items-center mt-auto">
+                  <span>Learn More</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right ms-1" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Programs Section -->
+    <section class="section border-bottom border-light">
+      <div class="container">
+        <!-- Header -->
+        <div class="mb-5 fade-in-up">
+          <h2 class="display-font fw-bold text-forest mb-3 display-6">Featured Programs</h2>
+          <div class="rule-accent mb-0"></div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="row g-4">
+          <!-- First Project (Large) -->
+          <div class="col-lg-6 fade-in-up delay-100">
+            <div class="card h-100 border-light rounded-4 overflow-hidden shadow-sm position-relative text-white" style="min-height: 400px;">
+              <img src="https://placehold.co/800x800/16352a/f3ead9?text=Community+Public+Health" class="card-img h-100 object-fit-cover" alt="Community Public Health Initiative">
+              <div class="card-img-overlay d-flex flex-column justify-content-end p-4 p-md-5" style="background: linear-gradient(to top, rgba(14, 36, 28, 0.95), rgba(14, 36, 28, 0.4), transparent);">
+                <h3 class="display-font fw-bold mb-3 fs-2">Community Public Health Initiative</h3>
+                <p class="mb-4 opacity-75 fw-medium" style="max-width: 500px;">
+                  Bringing medical screening, vaccinations, and maternal wellness workshops directly to remote settlements in the Kagera Region.
+                </p>
+                <div>
+                  <a href="programs.html" class="link-light fw-bold text-decoration-none border-bottom border-2 border-clay pb-1 d-inline-flex align-items-center">
+                    <span style="color: var(--gold) !important;">Explore Health Programs</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right ms-2" style="color: var(--gold) !important;" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Project (Stacked Right) -->
+          <div class="col-lg-6 fade-in-up delay-200">
+            <div class="card h-100 border-light rounded-4 overflow-hidden shadow-sm position-relative text-white" style="min-height: 400px;">
+              <img src="https://placehold.co/800x800/16352a/f3ead9?text=Ecosystem+Restoration" class="card-img h-100 object-fit-cover" alt="Ecosystem Restoration">
+              <div class="card-img-overlay d-flex flex-column justify-content-end p-4 p-md-5" style="background: linear-gradient(to top, rgba(14, 36, 28, 0.95), rgba(14, 36, 28, 0.4), transparent);">
+                <h3 class="display-font fw-bold mb-3 fs-3">Ecosystem Restoration & Sustainable Farming</h3>
+                <p class="mb-4 opacity-75 fw-medium" style="max-width: 500px;">
+                  Training farmers in eco-friendly agricultural techniques and executing mass tree planting to protect Biharamulo water basins.
+                </p>
+                <div>
+                  <a href="programs.html" class="link-light fw-bold text-decoration-none border-bottom border-2 border-clay pb-1 d-inline-flex align-items-center">
+                    <span style="color: var(--gold) !important;">Learn About Eco Projects</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right ms-2" style="color: var(--gold) !important;" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Our Mission Section -->
+    <section class="position-relative py-5 overflow-hidden" style="background: linear-gradient(to bottom right, var(--forest-deep), var(--forest));">
+      <div class="container py-5 position-relative z-1 text-center">
+        <div class="fade-in-up">
+          <h2 class="display-font fw-bold text-white mb-4 display-5">Support Our Mission</h2>
+
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-8">
+              <p class="fs-5 text-white opacity-75 mb-0">
+                Join us in our vision for a healthy and sustainable future where every person has access
+                to healthcare and lives in harmony with nature. Your contribution supports our work
+                <strong class="text-white"> transforming lives across Tanzania</strong> through healthcare,
+                environmental conservation, and community empowerment.
+              </p>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="contact.html" class="btn btn-accent-custom px-4 py-3 d-inline-flex align-items-center gap-2 shadow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/></svg>
+              Donate Now
+            </a>
+            <a href="contact.html" class="btn btn-outline-light px-4 py-3 d-inline-flex align-items-center gap-2" style="border-width: 2px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></svg>
+              Volunteer
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-5 bg-white border-bottom border-light">
+      <div class="container pb-3">
+        <div class="text-center mb-5 fade-in-up">
+          <p class="text-muted-custom fw-bold text-uppercase tracking-wide small mb-2">Our Partners & Supporters</p>
+          <div class="rule-accent mx-auto mt-0" style="width: 40px; height: 2px;"></div>
+        </div>
+
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center fade-in-up delay-100 text-center">
+          <div class="col">
+            <div class="p-3 border rounded-3 bg-light h-100 d-flex flex-column justify-content-center">
+              <span class="fw-bold text-forest small">Ministry of Health Tanzania</span>
+              <span class="text-muted-custom mt-1" style="font-size: 0.65rem; text-transform: uppercase;">Government Partner</span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border rounded-3 bg-light h-100 d-flex flex-column justify-content-center">
+              <span class="fw-bold text-forest small">Kagera Regional Council</span>
+              <span class="text-muted-custom mt-1" style="font-size: 0.65rem; text-transform: uppercase;">Local Government</span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border rounded-3 bg-light h-100 d-flex flex-column justify-content-center">
+              <span class="fw-bold text-forest small">Biharamulo District Authority</span>
+              <span class="text-muted-custom mt-1" style="font-size: 0.65rem; text-transform: uppercase;">District Council</span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border rounded-3 bg-light h-100 d-flex flex-column justify-content-center">
+              <span class="fw-bold text-forest small">NEMC Tanzania</span>
+              <span class="text-muted-custom mt-1" style="font-size: 0.65rem; text-transform: uppercase;">Environmental Partner</span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border rounded-3 bg-light h-100 d-flex flex-column justify-content-center">
+              <span class="fw-bold text-forest small">Tanzania Commission for AIDS</span>
+              <span class="text-muted-custom mt-1" style="font-size: 0.65rem; text-transform: uppercase;">Health Partner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Identical across all pages) -->
+  <footer class="sca-footer">
+    <!-- Newsletter Bar -->
+    <div class="bg-forest border-bottom border-light border-opacity-10 py-5 mb-5">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
+            <h3 class="text-white display-font fw-bold mb-2">Join Our Newsletter</h3>
+            <p class="text-white opacity-75 mb-0">Subscribe to receive regular updates on health, environment, and outreach programs.</p>
+          </div>
+          <div class="col-lg-5">
+            <form class="newsletterForm d-flex flex-column flex-sm-row gap-2">
+              <input type="email" class="form-control bg-transparent text-white border-secondary border-opacity-50" placeholder="Email Address" required>
+              <button class="btn btn-accent-custom px-4 text-nowrap" type="submit">Subscribe Now</button>
+            </form>
+            <div class="form-status mt-2 text-center text-lg-start"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer Links -->
+    <div class="container">
+      <div class="row gy-5 mb-5">
+        <div class="col-lg-4 pe-lg-5">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <img src="https://placehold.co/56x56/a6432d/ffffff?text=SCA" alt="Logo" class="rounded-circle">
+            <div>
+              <h4 class="text-white mb-0 display-font fw-bold">SmartCare Africa</h4>
+              <small class="text-clay fw-bold text-uppercase tracking-wide" style="letter-spacing: 0.1em;">Foundation</small>
+            </div>
+          </div>
+          <p class="mb-4 opacity-75">
+            A registered Tanzanian NGO connecting human health and environmental preservation to secure a resilient, healthy future for local communities.
+          </p>
+          <a href="contact.html" class="btn btn-outline-light border-opacity-25 px-4 rounded-pill">Support Our Mission</a>
+        </div>
+
+        <div class="col-lg-2 offset-lg-1 col-md-4">
+          <h5 class="display-font">Our Programs</h5>
+          <hr class="rule-accent mb-4">
+          <ul class="list-unstyled d-flex flex-column gap-3">
+            <li><a href="who-we-are.html">About Us</a></li>
+            <li><a href="programs.html#healthcare">Healthcare Programs</a></li>
+            <li><a href="programs.html#environmental">Environmental Projects</a></li>
+            <li><a href="programs.html#community">Community Outreach</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-4">
+          <h5 class="display-font">Quick Links</h5>
+          <hr class="rule-accent mb-4">
+          <ul class="list-unstyled d-flex flex-column gap-3">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="resource-center.html">Resource Center</a></li>
+            <li><a href="resource-center.html#news">News & Updates</a></li>
+            <li><a href="contact.html">Donate & Support</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <h5 class="display-font">Contact Info</h5>
+          <hr class="rule-accent mb-4">
+          <ul class="list-unstyled d-flex flex-column gap-3">
+            <li class="d-flex gap-3 text-white opacity-75">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt text-clay flex-shrink-0" viewBox="0 0 16 16"><path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/><path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+              <span>Mankorongo Street,<br>Biharamulo District,<br>Kagera Region, Tanzania<br>P.O. Box 70</span>
+            </li>
+            <li class="d-flex gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope text-clay flex-shrink-0" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg>
+              <a href="mailto:info@smartcareafrica.org">info@smartcareafrica.org</a>
+            </li>
+            <li class="d-flex gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone text-clay flex-shrink-0" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.528.528 0 0 0 .138.51l2.296 2.295a.528.528 0 0 0 .51.138l2.19-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg>
+              <a href="tel:+255763729580">+255 763 729 580</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div class="mb-3 mb-md-0 text-center text-md-start">
+          <p class="mb-1">&copy; <script>document.write(new Date().getFullYear())</script> SmartCare Africa Foundation. All rights reserved.</p>
+          <p class="mb-0">Registered NGO in Tanzania under the Non-Governmental Organizations Act, No. 24 of 2002 | Reg. No. 00NGO/R/8467</p>
+        </div>
+        <div>
+          <span>Biharamulo, Kagera, Tanzania</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top-button btn btn-primary-custom rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg" style="width: 50px; height: 50px; z-index: 1000; padding: 0;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/></svg>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
