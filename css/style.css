@@ -291,8 +291,13 @@ h1, h2, h3, h4, h5, h6, .display-font {
 }
 
 .fade-in-up {
+  opacity: 0; /* hidden by default */
+  transform: translateY(20px);
+}
+.fade-in-up.visible {
   animation: fadeIn 0.8s ease-out forwards;
 }
+
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }

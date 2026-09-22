@@ -100,6 +100,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Animation Observer ---
+  // Only play fade-in-up animations when they scroll into view
+  const fadeElements = document.querySelectorAll('.fade-in-up');
+  if (fadeElements.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Optional: stop observing once it's visible so it doesn't animate again
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(el => observer.observe(el));
+  }
+
   // --- Scroll to Top Button ---
   const scrollBtn = document.querySelector('.scroll-top-button');
   if (scrollBtn) {
